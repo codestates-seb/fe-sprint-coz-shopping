@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -35,4 +35,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.header {
+  background-color: white;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 8px 8px 0px rgb(0, 0, 0, 0.1);
+}
+.header-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navtitle {
+  font-weight: bold;
+  font-size: 32px;
+  margin-left: 10px;
+}
+
+.img {
+  height: 40%;
+  margin-left: 30px;
+}
+.img2 {
+  height: 30%;
+  margin-right: 30px;
 }
