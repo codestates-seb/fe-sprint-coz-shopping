@@ -1,6 +1,6 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import List from "../components/List";
+import List from "../components/Product";
 
 const Main = () => {
   return (
