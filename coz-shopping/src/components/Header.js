@@ -29,6 +29,7 @@ function Header() {
                             <img src={process.env.PUBLIC_URL + 'images/icon/pd_list_icon.svg'} alt="toggle" />
                             <span>상품 리스트</span>
                         </Link>
+                        {/* 북마크 리스트 걸기 */}
                         <Link to={''} className="pb_list_icon">
                             <img src={process.env.PUBLIC_URL + 'images/icon/pb_list_icon.svg'} alt="toggle" />
                             <span>북마크 리스트</span>
