@@ -27,8 +27,10 @@ const Header = () => {
 
   return (
     <div className="header">
-      <img className="header__logo" src={logo} alt="logo" />
-      <h1 className="header__shoppingMall">COZ Shopping</h1>
+      <Link className="header__moveMain" to="/">
+        <img className="header__logo" src={logo} alt="logo" />
+        <h1 className="header__shoppingMall">COZ Shopping</h1>
+      </Link>
       <img className="header__menu" src={iconMenu} alt="menu" />
       <Dropdown />
     </div>
