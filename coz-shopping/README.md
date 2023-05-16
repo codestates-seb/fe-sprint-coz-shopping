@@ -10,7 +10,7 @@
 <br>
 
 ## 📅 프로젝트 기간
-- 2023.05.12 ~ 2023.05.18 (4일 - 주말 미포함)
+- 2023.05.12 ~ 2023.05.18 (5일 - 주말 미포함)
 <br>
 
 ## ⭐ 주요 기능
@@ -59,8 +59,8 @@
     <tr>
         <td>서버환경</td>
         <td>
-            <img src="https://img.shields.io/badge/Apache Tomcat-D22128?style=for-the-badge&logo=Apache Tomcat&logoColor=white" style="border-radius:15px"/>
-            <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white" style="border-radius:15px"/>
+            <!-- <img src="https://img.shields.io/badge/Apache Tomcat-D22128?style=for-the-badge&logo=Apache Tomcat&logoColor=white" style="border-radius:15px"/>
+            <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white" style="border-radius:15px"/> -->
         </td>
     </tr>
 </table>
