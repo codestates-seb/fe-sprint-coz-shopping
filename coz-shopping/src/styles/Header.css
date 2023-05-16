@@ -72,3 +72,12 @@ button {
 .close-button {
     margin-top: 10px;
 }
+
+.pd_list_icon {
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.pb_list_icon {
+    text-decoration: none;
+}
