@@ -25,20 +25,15 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <ProductsContext.Provider value={{ products }}>
-                <Main />
-              </ProductsContext.Provider>
-            }
-          />
-          <Route path="/products/list" element={<ProductList />} />
-          <Route path="/bookmark" element={<Bookmark />} />
-        </Routes>
-      </Router>
+      <ProductsContext.Provider value={{ products }}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/products/list" element={<ProductList />} />
+            <Route path="/bookmark" element={<Bookmark />} />
+          </Routes>
+        </Router>
+      </ProductsContext.Provider>
     </div>
   );
 }

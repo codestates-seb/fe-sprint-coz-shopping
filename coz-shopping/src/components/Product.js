@@ -27,14 +27,13 @@ const List = () => {
 
   return (
     <div className="product">
-      {" "}
       {products.map((item, id) => {
         return (
           <div className="product__info" key={id}>
             <div className="info__img">
               <img
                 className="info_imgProduct"
-                src={item.image_url}
+                src={item.image_url || item.brand_image_url}
                 alt="product"
                 onClick={handleOpenModal}
               />

@@ -4,3 +4,13 @@
   margin: 1px;
   padding: 1px;
 }
+
+.App {
+  width: 1280px;
+  height: 832px;
+  margin: auto;
+
+  overflow-y: scroll;
+
+  background: #ffffff;
+}
