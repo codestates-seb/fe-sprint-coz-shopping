@@ -30,7 +30,6 @@ const Header = () => {
     );
   };
 
-  console.log(isOpen);
   return (
     <div className="header">
       <Link className="header__moveMain" to="/">
