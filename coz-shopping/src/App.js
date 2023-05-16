@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Main from "./page/Main";
 import { useEffect, useState } from "react";
+import Bookmark from "./page/Bookmark";
+import ProductList from "./page/ProductList";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -24,6 +26,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/products/list" element={<ProductList />} />
+          <Route path="/bookmark" element={<Bookmark />} />
         </Routes>
       </Router>
     </div>
