@@ -3,8 +3,13 @@ import logo from "../icon/로고.png";
 import iconMenu from "../icon/아이콘.png";
 import iconProduct from "../icon/상품 아이콘.png";
 import iconBookmark from "../icon/북마크 아이콘.png";
+import { useState } from "react";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMenu = () => setIsOpen(!isOpen);
+
   const Dropdown = () => {
     return (
       <div className="dropdown">
@@ -25,14 +30,15 @@ const Header = () => {
     );
   };
 
+  console.log(isOpen);
   return (
     <div className="header">
       <Link className="header__moveMain" to="/">
         <img className="header__logo" src={logo} alt="logo" />
         <h1 className="header__shoppingMall">COZ Shopping</h1>
       </Link>
-      <img className="header__menu" src={iconMenu} alt="menu" />
-      <Dropdown />
+      <img className="header__menu" src={iconMenu} alt="menu" onClick={handleMenu} />
+      {isOpen && <Dropdown />}
     </div>
   );
 };
