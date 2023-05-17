@@ -12,4 +12,4 @@ root.render(
     <GlobalStyle />
     <App />
   </BrowserRouter>
-);
+); 
