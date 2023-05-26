@@ -1,21 +1,30 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { useSelector } from "react-redux";
-// import { useState } from "react";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Root from './pages/Root';
+import Mainpage from './pages/Mainpage'
+import Bookmarklist from './pages/Bookmarklist'
+import ProductsList from './pages/Productslist';
+import Error from './components/Error'
+import Loading from './components/Loading'
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Root />,
+    errorElement: <Error />,
+    children: [
+      { index: true, element: <Mainpage /> },
+      { path: '/bookmark', element: <Bookmarklist /> },
+      { path: '/products/list', element: <ProductsList /> },
+      { path: '/Loading', element: <Loading /> },
+    ],
+  },
+]);
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path='/' element></Route>
-        <Route path='/' element></Route>
-        <Route path='/' element></Route>
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <RouterProvider router={router} />
   );
 }
 
