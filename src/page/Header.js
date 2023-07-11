@@ -13,6 +13,8 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  background-color: #ffffff;
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
   > .logo {
     width: 55px;
     height: 30px;
@@ -22,7 +24,7 @@ const Container = styled.div`
     width: 34px;
     height: 24px;
     margin-left: auto;
-    padding-right: 100px;
+    margin-right: 100px;
   }
   > div {
     font-size: 2rem;
@@ -32,7 +34,39 @@ const Container = styled.div`
 `;
 
 const DropdownContainer = styled.section`
-  position: relative;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 80%;
+  right: 3%;
+  border-radius: 15px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+  > .line {
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.4);
+  }
+  // Link 흔적 지우기 위한 CSS
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:visited {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  a:focus {
+    text-decoration: none;
+  }
+  a:hover,
+  a:active {
+    text-decoration: none;
+  }
 `;
 
 const Header = () => {
@@ -69,13 +103,19 @@ const Header = () => {
       {isOpen && (
         <DropdownContainer ref={outsideRef}>
           <div className="dropDown-list">ooo님, 안녕하세요!</div>
+          <div className="line"></div>
           <Link className="dropDown-list" to="/productlist">
-            <MdOutlineCardGiftcard className="dropDown-Icon" />
-            <span>상품리스트 페이지</span>
+            <div className="line">
+              <MdOutlineCardGiftcard className="dropDown-Icon" />
+              상품리스트 페이지
+            </div>
           </Link>
+          <div className="line"></div>
           <Link className="dropDown-list" to="/bookmark">
-            <MdStarOutline className="dropDownIcon" />
-            <span>북마크 페이지</span>
+            <div>
+              <MdStarOutline className="dropDownIcon" />
+              북마크 페이지
+            </div>
           </Link>
         </DropdownContainer>
       )}
