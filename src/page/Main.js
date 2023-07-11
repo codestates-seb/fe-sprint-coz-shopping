@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
+import Header from "./Header";
 
 const Main = () => {
-  return <div className="wrapper">메인페이지 입니다.</div>;
+  return (
+    <>
+      <Header></Header>
+      <div>메인페이지요</div>
+    </>
+  );
 };
 export default Main;
