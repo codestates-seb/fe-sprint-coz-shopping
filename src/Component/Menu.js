@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import menu from "../assets/menu.png";
 import productListIcon from "../assets/gift-icon.png";
 import bookmarkIcon from "../assets/boomark-icon.png";
@@ -8,14 +9,18 @@ export default function Menu({ menuPopUp }) {
         <MenuBackground onClick={menuPopUp}>
             <MenuModal src={menu} />
             <MenuUser>재연님 안녕하세요!</MenuUser>
-            <MenuProductList>
-                <MenuIcon src={productListIcon}></MenuIcon>
-                <MenuName className="menu__name">상품리스트 페이지</MenuName>
-            </MenuProductList>
-            <MenuBookmark>
-                <MenuIcon src={bookmarkIcon}></MenuIcon>
-                <MenuName className="menu__name">북마크 페이지</MenuName>
-            </MenuBookmark>
+            <RouterLink to="/product/list">
+                <MenuProductList>
+                    <MenuIcon src={productListIcon}></MenuIcon>
+                    <MenuName className="menu__name">상품리스트 페이지</MenuName>
+                </MenuProductList>
+            </RouterLink>
+            <RouterLink to="/bookmark">
+                <MenuBookmark>
+                    <MenuIcon src={bookmarkIcon}></MenuIcon>
+                    <MenuName className="menu__name">북마크 페이지</MenuName>
+                </MenuBookmark>
+            </RouterLink>
         </MenuBackground>
     )
 }
@@ -71,4 +76,9 @@ const MenuIcon = styled.img`
 
 const MenuName = styled.span`
     margin-left: 8px;
+`
+
+const RouterLink = styled(Link)`
+    text-decoration: none;
+    color: black;
 `
