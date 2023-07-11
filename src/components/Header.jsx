@@ -1,5 +1,6 @@
 import React from "react";
 import "./header.css";
+import { FaBars } from "react-icons/fa6";
 
 export const Header = () => {
   return (
@@ -7,10 +8,10 @@ export const Header = () => {
       <div className="nav__items">
         <div className="nav__logo">
           <img src="imges" alt="codestates logo" />
-          <h1>Codestates</h1>
+          <h1>COZ Shopping</h1>
         </div>
         <div className="nav__toggle">
-          <div>Burger</div>
+          <FaBars size={34} />
         </div>
       </div>
     </nav>
