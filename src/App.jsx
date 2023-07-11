@@ -8,7 +8,7 @@ import { updateAllProducts } from "./features/AllProductsSlice";
 import { updateLoding } from "./features/Loding";
 import { useEffect } from "react";
 import Header from "./components/Header";
-
+import Footer from "./components/Footer";
 const Div = styled.div`
   display: flex;
   flex-direction: column;
@@ -40,6 +40,7 @@ function App() {
           <Route path="/products/list" element={<Products />} />
           <Route path="/bookmark" element={<Bookmark />} />
         </Routes>
+        <Footer />
       </Div>
     </BrowserRouter>
   );
