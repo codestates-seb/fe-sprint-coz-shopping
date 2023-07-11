@@ -1,9 +1,21 @@
 main {
   margin: 24px 76px;
+
+  /* width: 1128px; */
+
+  background-color: green;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100vh;
   width: 100vw;
 }
 
-main h1 {
+section h1 {
   font-size: 24px;
   font-weight: bold;
 }

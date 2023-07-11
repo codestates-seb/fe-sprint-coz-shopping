@@ -6,9 +6,11 @@ import { BookmarkList } from "../components/BookmarkList";
 export const Main = () => {
   return (
     <main>
-      <h1>상품 리스트</h1>
-      <ProductList />
-      <BookmarkList />
+      <section>
+        <h1>상품 리스트</h1>
+        <ProductList />
+        <BookmarkList />
+      </section>
     </main>
   );
 };
