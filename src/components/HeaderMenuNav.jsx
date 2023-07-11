@@ -67,31 +67,28 @@ const Triangle = styled.div`
   position: absolute;
 `;
 
-const ItemList = styled.ul`
+const ItemList = styled.div`
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
   background-color: white;
   height: 150px;
   border-radius: 12px;
-  li {
+  div {
     height: calc(150px / 3);
     display: flex;
     align-items: center;
   }
 `;
 
-const UserInfo = styled.li`
+const UserInfo = styled.div`
   padding-left: 0;
   justify-content: center;
 `;
 
-const Item = styled.li`
+const Item = styled.div`
   padding-left: 24px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  a {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
+  display: flex;
+  gap: 4px;
 `;
 
 export default function HeaderMenuNav({ menuToggleHandler }) {
@@ -100,16 +97,16 @@ export default function HeaderMenuNav({ menuToggleHandler }) {
       <Triangle />
       <ItemList>
         <UserInfo>OOO님, 안녕하세요</UserInfo>
-        <Item>
-          <Link to="/products/list" onClick={menuToggleHandler}>
+        <Link to="/products/list" onClick={menuToggleHandler}>
+          <Item>
             <AiOutlineGift size={20} /> <span>상품리스트 페이지</span>
-          </Link>
-        </Item>
-        <Item>
-          <Link to="/bookmark" onClick={menuToggleHandler}>
+          </Item>
+        </Link>
+        <Link to="/bookmark" onClick={menuToggleHandler}>
+          <Item>
             <AiOutlineStar size={20} /> <span>북마크 페이지</span>
-          </Link>
-        </Item>
+          </Item>
+        </Link>
       </ItemList>
     </HeaderMenuNavContainer>
   );
