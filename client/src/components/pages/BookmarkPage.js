@@ -2,7 +2,9 @@ import React from 'react';
 
 const BookmarkPage = (props) => {
   return (
-    <h1>Bookmark Page</h1>
+    <>
+      <h1>Bookmark Page</h1>
+    </>
   );
 }
 
