@@ -12,6 +12,13 @@ export const Header = () => {
         </div>
         <div className="nav__toggle">
           <FaBars size={34} />
+          <ul className="toggle__list">
+            <li className="toggle__list__item">이지원님, 안녕하세요!</li>
+            <li className="toggle__list__item" id="item__middle">
+              상품리스트 패이지
+            </li>
+            <li className="toggle__list__item">북마크 페이지</li>
+          </ul>
         </div>
       </div>
     </nav>
