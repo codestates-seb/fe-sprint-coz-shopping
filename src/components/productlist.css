@@ -14,6 +14,7 @@ article {
   height: 264px;
   display: flex;
   flex-direction: column;
+
   margin-top: 12px;
 }
 
@@ -24,7 +25,7 @@ article {
 
 .card__info {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   margin-top: 6px;
 }
