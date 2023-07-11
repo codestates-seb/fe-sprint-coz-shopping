@@ -15,7 +15,7 @@ const Container = styled.div`
   align-items: center;
   background-color: #ffffff;
   filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
-  > .logo {
+  > a > .logo {
     width: 55px;
     height: 30px;
     margin: 20px;
@@ -91,7 +91,9 @@ const Header = () => {
 
   return (
     <Container>
-      <img className="logo" src={logo} alt="로고" />
+      <Link to="/">
+        <img className="logo" src={logo} alt="로고" o />
+      </Link>
       <div>COZ Shopping</div>
       <img
         className="nevMenu"
