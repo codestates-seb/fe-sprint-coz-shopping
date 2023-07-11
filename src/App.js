@@ -3,16 +3,17 @@ import { Route, Routes } from "react-router-dom";
 import { Main } from "./pages/Main";
 
 import { Footer } from "./components/Footer";
+import "./App.css";
 import { ProductPage } from "./pages/ProductPage";
 import { BookmarkPage } from "./pages/BookmarkPage";
-import "./App.css";
+
 function App() {
   return (
     <>
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/products/list" element={<ProductPage />} />
+        <Route path="/products" element={<ProductPage />} />
         <Route path="/bookmarks" element={<BookmarkPage />} />
       </Routes>
       <Footer />
