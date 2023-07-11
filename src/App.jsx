@@ -7,6 +7,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateAllProducts } from "./features/AllProductsSlice";
 import { updateLoding } from "./features/Loding";
 import { useEffect } from "react";
+import Header from "./components/Header";
+
 const Div = styled.div`
   display: flex;
   flex-direction: column;
@@ -32,6 +34,7 @@ function App() {
   return (
     <BrowserRouter>
       <Div className="App">
+        <Header />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/products/list" element={<Products />} />
