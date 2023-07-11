@@ -1,0 +1,5 @@
+.alignbox{
+  display: flex;
+  align-items: flex-end; /* 수정: 오른쪽 정렬 */
+  justify-content: flex-end; /* 수정: 오른쪽 정렬 */
+}
