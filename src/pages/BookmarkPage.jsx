@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Bookmark = () => {
+export const BookmarkPage = () => {
   return <div>Bookmark</div>;
 };

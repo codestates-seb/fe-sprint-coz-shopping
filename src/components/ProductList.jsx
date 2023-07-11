@@ -7,17 +7,26 @@ export const ProductList = () => {
   const productList = productsLimitFour;
 
   useEffect(() => {
-    fetch(productList) //
+    fetch(productList)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setViewProductList(data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
 
+  console.log(viewProductList, "data");
   return (
     <article>
       <h1>상품 리스트</h1>
+      {viewProductList.map((post) => (
+        <div key={post.id}>
+          <h1>{post.title}</h1>
+          <img src={post.image_url} alt="" />
+        </div>
+      ))}
     </article>
   );
 };

@@ -1,9 +1,10 @@
 import { Header } from "./components/Header";
 import { Route, Routes } from "react-router-dom";
 import { Main } from "./pages/Main";
-import { ProductList } from "./pages/ProductList";
-import { Bookmark } from "./pages/Bookmark";
+
 import { Footer } from "./components/Footer";
+import { ProductPage } from "./pages/ProductPage";
+import { BookmarkPage } from "./pages/BookmarkPage";
 
 function App() {
   return (
@@ -11,8 +12,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/products" element={<ProductList />} />
-        <Route path="/bookmarks" element={<Bookmark />} />
+        <Route path="/products/list" element={<ProductPage />} />
+        <Route path="/bookmarks" element={<BookmarkPage />} />
       </Routes>
       <Footer />
     </>
