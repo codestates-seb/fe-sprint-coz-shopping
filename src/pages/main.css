@@ -1,0 +1,9 @@
+main {
+  margin: 24px 76px;
+  width: 100vw;
+}
+
+main h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
