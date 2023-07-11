@@ -1,5 +1,5 @@
 article {
-  width: 100%;
+  width: 100vw;
   height: 264px;
 }
 
@@ -14,6 +14,7 @@ article {
   height: 264px;
   display: flex;
   flex-direction: column;
+  margin-top: 12px;
 }
 
 .card img {
@@ -25,7 +26,12 @@ article {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3px;
+  margin-top: 6px;
+}
+
+.card__info .title {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .card__info__price {

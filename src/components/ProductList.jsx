@@ -26,7 +26,7 @@ export const ProductList = () => {
           <div key={post.id} className="card">
             <img src={post.image_url} alt="product logo" />
             <div className="card__info">
-              <p>{post.title}</p>
+              <p className="title">{post.title}</p>
               <div className="card__info__price">
                 <p>
                   {post.discountPercentage
