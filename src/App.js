@@ -5,7 +5,7 @@ import { Main } from "./pages/Main";
 import { Footer } from "./components/Footer";
 import { ProductPage } from "./pages/ProductPage";
 import { BookmarkPage } from "./pages/BookmarkPage";
-
+import "./App.css";
 function App() {
   return (
     <>
