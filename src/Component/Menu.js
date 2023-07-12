@@ -4,7 +4,7 @@ import productListIcon from "../assets/gift-icon.png";
 import bookmarkIcon from "../assets/boomark-icon.png";
 import styled from 'styled-components';
 
-export default function Menu({ isMenu, menuPopUp }) {
+export default function Menu({ menuPopUp }) {
     return (
             <MenuBackground onClick={menuPopUp}>
                 <MenuModal src={menu} />
