@@ -1,5 +1,5 @@
-import MainPage from "./pages/mainPage";
 import BookMark from "./pages/BookMark";
+import MainPage from "./pages/MainPage";
 import ProductListPage from "./pages/ProductListPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
