@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px solid red;
+}
+
+header {
+    width: 1280px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid green;
+}
+
+header > button {
+    width: 34px;
+    height: 24px;
+}
+
+.main {
+    width: 1280px;
+    height: 694px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: auto;
+
+    border: 1px solid pink;
+}
+
+.container {
+    width: 1128px;
+    height: 640px;
+    border: 1px solid purple;
+}
+
+.listBtn {
+    width: 179px;
+    height: 38px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 0px;
+    flex-wrap: wrap;
+    width: 1128px;
+}
+
+.List {
+    list-style-type: none;
+    width: 264px;
+    height: 264px;
+    margin: 12px 0px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    height: 24px;
+}
+
+.imgList {
+    width: 264px;
+    height: 210px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: gray;
+    width: 1280px;
+    height: 58px;
+
+    border: 1px solid blue;
+}
