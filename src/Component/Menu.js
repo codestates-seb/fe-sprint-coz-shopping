@@ -6,22 +6,22 @@ import styled from 'styled-components';
 
 export default function Menu({ menuPopUp }) {
     return (
-            <MenuBackground onClick={menuPopUp}>
-                <MenuModal src={menu} />
-                <MenuUser>재연님 안녕하세요!</MenuUser>
-                <RouterLink to="/products/list">
-                    <MenuProductList>
-                        <MenuIcon src={productListIcon}></MenuIcon>
-                        <MenuName className="menu__name">상품리스트 페이지</MenuName>
-                    </MenuProductList>
-                </RouterLink>
-                <RouterLink to="/bookmark">
-                    <MenuBookmark>
-                        <MenuIcon src={bookmarkIcon}></MenuIcon>
-                        <MenuName className="menu__name">북마크 페이지</MenuName>
-                    </MenuBookmark>
-                </RouterLink>
-            </MenuBackground>
+        <MenuBackground onClick={menuPopUp}>
+            <MenuModal src={menu} />
+            <MenuUser>재연님 안녕하세요!</MenuUser>
+            <RouterLink to="/products/list">
+                <MenuProductList>
+                    <MenuIcon src={productListIcon}></MenuIcon>
+                    <MenuName className="menu__name">상품리스트 페이지</MenuName>
+                </MenuProductList>
+            </RouterLink>
+            <RouterLink to="/bookmark">
+                <MenuBookmark>
+                    <MenuIcon src={bookmarkIcon}></MenuIcon>
+                    <MenuName className="menu__name">북마크 페이지</MenuName>
+                </MenuBookmark>
+            </RouterLink>
+        </MenuBackground>
     )
 }
 

@@ -22,4 +22,5 @@ const FooterBackground = styled.div`
     color: #888888;
     font-size: 12px;
     padding: 0.6875rem 0;
+    box-sizing: border-box;
 `
