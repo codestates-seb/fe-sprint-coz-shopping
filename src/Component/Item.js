@@ -30,8 +30,9 @@ const ProductItemContainer = styled.li`
     list-style: none;
 `
 
-const ProductImgContainer = styled.span`
+const ProductImgContainer = styled.div`
     position: relative;
+    margin-bottom: 0.375rem;
 `
 
 const ProductImg = styled.img`
