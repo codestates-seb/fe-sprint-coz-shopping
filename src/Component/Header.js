@@ -23,7 +23,7 @@ const HeaderBackground = styled.header`
     display: flex;
     justify-content: space-between;
     align-content: center;
-    height: 4.3rem;
+    height: 5rem;
     padding: 0 5rem;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
     background-color: white;

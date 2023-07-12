@@ -12,6 +12,7 @@ export default function Footer() {
 
 // styled-components
 const FooterBackground = styled.div`
+    height: 3.625rem;
     width: 100vw;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
