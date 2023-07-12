@@ -58,10 +58,16 @@ export default function Main() {
               {AllProducts.filter((el) => el.bookmark === true).length > 0 ? (
                 AllProducts.filter((el) => el.bookmark === true)
                   .slice(0, 4)
-                  .map((el) => <Card item={el} />)
+                  .map((el) => <Card key={el.id} item={el} />)
               ) : (
                 <div>
-                  <h3>현재 북마크 리스트가 없습니다.</h3>
+                  <h3
+                    style={{
+                      borderBottom: "1px solid rgba(0, 0, 0, 0.10)",
+                    }}
+                  >
+                    현재 북마크 리스트가 없습니다.
+                  </h3>
                 </div>
               )}
             </div>

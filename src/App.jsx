@@ -9,13 +9,13 @@ import { updateLoding } from "./features/Loding";
 import { useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import NotificationsCenter from "./components/NotificationsCenter";
 const Div = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
 function App() {
-  const AllProducts = useSelector((state) => state.AllProducts.value);
   const isLoding = useSelector((state) => state.Loding.value);
   const dispatch = useDispatch();
 
@@ -28,9 +28,6 @@ function App() {
       });
   }, []);
 
-  console.log(AllProducts);
-  console.log(isLoding);
-
   return (
     <BrowserRouter>
       <Div className="App">
@@ -40,6 +37,7 @@ function App() {
           <Route path="/products/list" element={<Products />} />
           <Route path="/bookmark" element={<Bookmark />} />
         </Routes>
+        <NotificationsCenter />
         <Footer />
       </Div>
     </BrowserRouter>
