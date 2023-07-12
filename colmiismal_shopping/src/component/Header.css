@@ -1,5 +1,9 @@
 /* Header */
 
+.linkcustom {
+    text-decoration: none;
+    color: inherit;
+}
 
 .header{
 
@@ -7,7 +11,8 @@ display: flex;
 justify-content: flex-start;
 align-items: center;
 
-position: sticky;
+position: fixed;
+top:0;
 
 width: 100%;
 height: 80px;

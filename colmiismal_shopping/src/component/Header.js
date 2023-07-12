@@ -1,20 +1,9 @@
 
 import "./Header.css";
 import { useEffect, useRef, useState } from "react";
+import { Link } from 'react-router-dom';
 
 export default function Header() {
-
-    const handleLogoClick = () => {
-        window.location.href = '/';
-    };
-
-    const handleProductClick = () => {
-        window.location.href = '/products/list';
-    };
-
-    const handleBookmarkClick = () => {
-        window.location.href = '/bookmark';
-    };
 
     const [dropdownVisible, setDropdownVisible] = useState(false);
 
@@ -41,21 +30,27 @@ export default function Header() {
     return (
         <div>
             <header className="header">
-                <img id="cozlogo" src="/codestatelogo.png" alt="logo" onClick={handleLogoClick}></img>
-                <span id="cozname" onClick={handleLogoClick}>COZ Shopping</span>
+                <Link to="/" className="linkcustom">
+                    <img id="cozlogo" src="/codestatelogo.png" alt="logo"></img>
+                    <span id="cozname">COZ Shopping</span>
+                </Link>
                 <img className="hamburger" src="/hamburger.png" alt="hamburger button" onClick={handleHamburgerClick}></img>
                 {dropdownVisible && (
                     <div ref={dropdownRef}>
                         <div id="dropdown_box">
                         <img id="polygon" src="/Polygon.png" alt="" ></img>
                             <div className="dropdown-menu">OOO님, 안녕하세요!</div>
-                            <div className="dropdown-menu" onClick={handleProductClick}>
-                                <img src="/producticon.png" alt="" ></img>
-                                <span>상품리스트 페이지</span>
+                            <div className="dropdown-menu">
+                                <Link to="/products/list" className="linkcustom">
+                                    <img src="/producticon.png" alt="" ></img>
+                                    <span>상품리스트 페이지</span>
+                                </Link>
                             </div>
-                            <div className="dropdown-menu" onClick={handleBookmarkClick}>
-                                <img src="/bookmarkicon.png" alt="" ></img>
-                                <span>북마크 페이지</span>
+                            <div className="dropdown-menu">
+                                <Link to="/bookmark" className="linkcustom">
+                                    <img src="/bookmarkicon.png" alt="" ></img>
+                                    <span>북마크 페이지</span>
+                                </Link>
                             </div>
                         </div>
                     </div>
