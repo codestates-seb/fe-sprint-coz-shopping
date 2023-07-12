@@ -8,6 +8,8 @@ import HeaderNav from './HeaderNav';
 /** Style */
 
 const HeaderContainer = styled.header`
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: row;
   align-items: center;

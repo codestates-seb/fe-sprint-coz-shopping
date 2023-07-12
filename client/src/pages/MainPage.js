@@ -7,6 +7,40 @@ const MainPage = (props) => {
     <>
       <Header />
       <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
+      <h1>Main Page</h1>
       <Footer />
     </>
   );

@@ -5,6 +5,7 @@ const FooterContainer = styled.footer`
   text-align: center;
   font-size: 0.6rem;
   color: gray;
+  margin: 3rem 0;
 `;
 
 const Footer = (props) => {
