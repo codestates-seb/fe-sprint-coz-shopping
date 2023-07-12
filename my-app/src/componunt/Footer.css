@@ -1,0 +1,13 @@
+.footer-container {
+    text-align: center;
+    background-color: whitesmoke;
+    max-width: 100%;
+    height: 80px;
+    padding: 0 76px;
+    color: #888888;
+}
+
+.footer-msg{
+    padding-top: 18px
+}
+
