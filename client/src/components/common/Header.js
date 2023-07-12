@@ -1,8 +1,9 @@
-import React from 'react';
+import { React, useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { ReactComponent as LogoImg } from '../../assets/logo.svg';
 import { ReactComponent as BurgerImg } from '../../assets/buger.svg';
-
+import HeaderNav from './HeaderNav';
 /** Style */
 
 const HeaderContainer = styled.header`
@@ -11,37 +12,40 @@ const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 1rem 3rem;
-`;
+  color: black;
 
-const LogoContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-const LogoTitle = styled.h1`
-  padding: 0 1rem;
-`;
-
-/** Event Handler */
-
-
-const Header = (props) => {
-  const logoClickHandler = () => {
-    window.location.href = '/';
+  .logo-container {
+    color: black;
+    display: flex;
+    flex-direction: row;
   }
 
-  const dropdownHandler = () => {
+  .logo-title {
+    padding: 0 1rem;
+  }
 
+  a {
+    text-decoration: none;
+  }
+`;
+
+const Header = (props) => {
+  const [dropdownShow, setDropdownShow] = useState(false);
+  const dropdownHandler = () => {
+    setDropdownShow(!dropdownShow);
   }
 
   return (
     <HeaderContainer>
-      <LogoContainer onClick={logoClickHandler}>
-        <LogoImg />
-        <LogoTitle>COZ Shopping</LogoTitle>
-      </LogoContainer>
+      <Link to="/">
+        <div className='logo-container'>
+          <LogoImg />
+          <h1 className='logo-title'>COZ Shopping</h1>
+        </div>
+      </Link>
       <div className='dropdown' onClick={dropdownHandler}>
         <BurgerImg />
+        {dropdownShow ? <HeaderNav /> : ''}
       </div>
     </HeaderContainer>
   );

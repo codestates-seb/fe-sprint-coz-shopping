@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MainPage from './components/pages/MainPage';
-import ItemList from './components/pages/ItemList';
-import BookmarkPage from './components/pages/BookmarkPage';
+import MainPage from './pages/MainPage';
+import ItemList from './pages/ItemList';
+import BookmarkPage from './pages/BookmarkPage';
 
 function App() {
   return (
