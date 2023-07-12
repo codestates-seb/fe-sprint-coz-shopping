@@ -1,3 +1,4 @@
 node_modules
 .prettierrc
 .git
+.DS_Store
