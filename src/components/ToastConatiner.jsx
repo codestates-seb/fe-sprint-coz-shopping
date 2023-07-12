@@ -14,11 +14,9 @@ const StyleToastContainer = styled.ul`
   gap: 4px;
   transform: translate(110%);
   z-index: 10;
-  background-color: red;
 `;
 
 export default function ToastConatiner({ toasts }) {
-  console.log(toasts);
   return (
     <StyleToastContainer>
       {toasts?.map((toast, i) => (

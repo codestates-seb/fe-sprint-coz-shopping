@@ -38,6 +38,9 @@ const StyleModal = styled.div`
     bottom: 24px;
     left: 24px;
   }
+  .description span {
+    font: 30px;
+  }
 `;
 
 export default function Modal({ item, modalHandler, bookMarkHandler }) {

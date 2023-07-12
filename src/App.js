@@ -49,10 +49,7 @@ function App() {
   const modalIsOpenHandler = (item) => {
     setModalIsOpen(item);
   };
-  const getRandomProducts = (products, count) => {
-    const shuffled = products.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
-  };
+
   return (
     <BrowserRouter>
       <ToastConatiner toasts={toasts} />
@@ -74,12 +71,29 @@ function App() {
               products={products}
               bookMarkHandler={itemBookMarkHandler}
               modalHandler={modalIsOpenHandler}
-              randomProducts={getRandomProducts}
             />
           }
         />
-        <Route path="/bookmark" element={<BookMark />} />
-        <Route path="/products/list" element={<ProductListPage />} />
+        <Route
+          path="/bookmark"
+          element={
+            <BookMark
+              products={products}
+              bookMarkHandler={itemBookMarkHandler}
+              modalHandler={modalIsOpenHandler}
+            />
+          }
+        />
+        <Route
+          path="/products/list"
+          element={
+            <ProductListPage
+              products={products}
+              bookMarkHandler={itemBookMarkHandler}
+              modalHandler={modalIsOpenHandler}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </BrowserRouter>

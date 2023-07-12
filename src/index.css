@@ -23,6 +23,7 @@ a,
 button {
   cursor: pointer;
   color: black;
+  background-color: transparent;
 }
 #root {
   display: flex;

@@ -4,11 +4,6 @@ import { styled } from "styled-components";
 import ProductCard from "../components/ProductCard";
 
 const StyleMainPageMain = styled(StyleMain)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
   section {
     width: 1128px;
   }
@@ -17,13 +12,7 @@ const StyleMainPageMain = styled(StyleMain)`
     font-weight: 600;
     margin-bottom: 12px;
   }
-  ul {
-    width: 100%;
-    display: flex;
-    gap: 24px;
-    justify-content: flex-start;
-    height: 264px;
-  }
+
   h5 {
     position: relative;
     right: 0;
@@ -33,7 +22,7 @@ const StyleMainPageMain = styled(StyleMain)`
     color: #80808080;
   }
 `;
-export default function MainPage({ products, bookMarkHandler, modalHandler, randomProducts }) {
+export default function MainPage({ products, bookMarkHandler, modalHandler }) {
   return (
     <StyleMainPageMain>
       <section>
