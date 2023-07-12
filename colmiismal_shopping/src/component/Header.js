@@ -26,17 +26,23 @@ export default function Header() {
     return (
         <div>
             <header className="header">
-                <img id="cozlogo" src="codestatelogo.png" alt="logo" onClick={handleLogoClick}></img>
+                <img id="cozlogo" src="/codestatelogo.png" alt="logo" onClick={handleLogoClick}></img>
                 <span id="cozname" onClick={handleLogoClick}>COZ Shopping</span>
-                <img className="hamburger" src="hamburger.png" alt="hamburger button" onClick={handleHamburgerClick}></img>
+                <img className="hamburger" src="/hamburger.png" alt="hamburger button" onClick={handleHamburgerClick}></img>
                 {dropdownVisible && (
                     <div>
                         
                         <div id="dropdown_box">
-                        <img id="polygon" src="Polygon.png" alt="" ></img>
+                        <img id="polygon" src="/Polygon.png" alt="" ></img>
                             <div className="dropdown-menu">OOO님, 안녕하세요!</div>
-                            <div className="dropdown-menu" onClick={handleProductClick}><img src="producticon.png" alt="" ></img>상품리스트 페이지</div>
-                            <div className="dropdown-menu" onClick={handleBookmarkClick}><img src="bookmarkicon.png" alt="" ></img>북마크 페이지</div>
+                            <div className="dropdown-menu" onClick={handleProductClick}>
+                                <img src="/producticon.png" alt="" ></img>
+                                <span>상품리스트 페이지</span>
+                            </div>
+                            <div className="dropdown-menu" onClick={handleBookmarkClick}>
+                                <img src="/bookmarkicon.png" alt="" ></img>
+                                <span>북마크 페이지</span>
+                            </div>
                         </div>
                     </div>
                 )}

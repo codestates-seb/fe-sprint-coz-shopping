@@ -57,9 +57,7 @@ left: 5.94%;
 right: 89.77%;
 top: 31.25%;
 bottom: 31.25%; */
-#dropdown-menu {
-    display: none;
-  }
+
 cursor: pointer;
 
 }
@@ -75,7 +73,7 @@ cursor: pointer;
     filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
     z-index: 10; /* Set as needed */
 
-     flex: 1;
+    flex: 1;
 
     display: flex;
     flex-direction: column;
@@ -110,6 +108,10 @@ cursor: pointer;
     justify-content: center; 
     text-align: center;
 
+}
+
+.dropdown-menu:nth-child(3),.dropdown-menu:nth-child(4) {
+    cursor: pointer;
 }
 
 .dropdown-menu:last-child {
