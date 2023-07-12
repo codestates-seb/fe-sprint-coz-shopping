@@ -46,13 +46,13 @@ function Header() {
       <HeadContainer>
         <ImgLogoCotainer>
           <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-            <img src="logo.png" alt="logo" />
+            <img src="/logo.png" alt="logo" />
             <LogoSpan> COZ shopping </LogoSpan>
           </Link>
         </ImgLogoCotainer>
         <HamburgerContainer>
           <Hamburger
-            src="hamburger.png"
+            src="/hamburger.png"
             alt="hamburger"
             onClick={() => {
               setView(!view);

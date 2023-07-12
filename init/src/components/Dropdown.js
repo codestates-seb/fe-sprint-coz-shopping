@@ -6,21 +6,27 @@ const LiContainer = styled.div`
   box-shadow: 0 7px 7px 0 grey;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  right: 2%;
+  background-color: white;
 `;
 
 const Li = styled.li`
   list-style: none;
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
   &:hover {
     background-color: skyblue;
     color: blue;
   }
+  border: 1px solid grey;
 `;
 
 function Dropdown() {
   return (
     <LiContainer>
-      <Li>이용혁님 환영합니다</Li>
+      <Li>이용혁님 안녕하세요!</Li>
       <Link
         to="/products/list"
         style={{ textDecoration: "none", color: "black" }}
