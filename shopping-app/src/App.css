@@ -1,0 +1,50 @@
+#head--container{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+    display: flex;
+    box-shadow: 10px 5px 5px rgb(174, 171, 171);
+    
+}
+.head--manu--container{
+    display: flex;   
+}
+#logo{
+    padding-left: 30px;
+    margin-right: 1em;
+    height: 40px;    
+    cursor: pointer; 
+}
+#title--name{
+    font-size: 30px;
+    vertical-align: top;
+    font-weight: 800;   
+}
+#dropdown--form{
+    display: flex;
+    flex-direction: column;
+}
+#hamberger{
+    padding-right: 30px;
+    align-self: flex-end;
+    height: 25px;    
+    cursor: pointer; 
+}
+#dropdown--container{
+    position: relative;
+    display: inline-block;    
+    margin-top: 0;
+    width: 200px;
+    padding-left: 0;
+    
+}
+#dropdown--box{
+  border: solid brown;
+  position: absolute;
+  list-style: none;
+}
+.icon--img{
+  height: 15px;
+}
