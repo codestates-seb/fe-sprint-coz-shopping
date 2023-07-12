@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Headers from "../component/Headers";
 import Footers from "../component/Footers";
+import axios from "axios";
 
 // 아티클
 const Article = styled.article`
@@ -44,7 +45,11 @@ const Article = styled.article`
                         border-radius:12px;
                         border: 1px solid #0000001A;
                         z-index: 3;
+                        overflow:hidden;
                     > .titleImg{
+                        width:100%;
+                        height:100%;
+                        z-index:3;
                     }
                     > .starImg {
                         width:24px;
@@ -68,6 +73,28 @@ const Article = styled.article`
 
 
 const Main = () => {
+    const [connectApi, setconnectApi] = useState('');
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get("http://cozshopping.codestates-seb.link/api/v1/products", {
+                    params: {
+                        count: 4,
+                    },
+                });
+                const apiItems = response.data
+                setconnectApi(apiItems);
+                console.log(apiItems);
+                console.log(connectApi);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchData();
+    }, []);
+
+
 
     return (
         <>
@@ -83,7 +110,7 @@ const Main = () => {
 
                         <li>
                             <div className="listImgWrap">
-                                <img className="titleImg" src="" alt="" />
+                                {connectApi && <img className="titleImg" src={connectApi[0].image_url} alt="" />}
                                 <img className="starImg" src="/images/star.png" alt="" />
                             </div>
                             <div className="listTextWrap">
@@ -95,7 +122,7 @@ const Main = () => {
                         </li>
                         <li>
                             <div className="listImgWrap">
-                                <img className="titleImg" src="" alt="" />
+                                {connectApi && <img className="titleImg" src={connectApi[1].image_url} alt="" />}
                                 <img className="starImg" src="/images/star.png" alt="" />
                             </div>
                             <div className="listTextWrap">
@@ -107,7 +134,7 @@ const Main = () => {
                         </li>
                         <li>
                             <div className="listImgWrap">
-                                <img className="titleImg" src="" alt="" />
+                                {connectApi && <img className="titleImg" src={connectApi[2].image_url} alt="" />}
                                 <img className="starImg" src="/images/star.png" alt="" />
                             </div>
                             <div className="listTextWrap">
@@ -119,7 +146,7 @@ const Main = () => {
                         </li>
                         <li>
                             <div className="listImgWrap">
-                                <img className="titleImg" src="" alt="" />
+                                {connectApi && <img className="titleImg" src={connectApi[3].image_url} alt="" />}
                                 <img className="starImg" src="/images/star.png" alt="" />
                             </div>
                             <div className="listTextWrap">
@@ -139,7 +166,7 @@ const Main = () => {
 
                         <li>
                             <div className="listImgWrap">
-                                <img className="titleImg" src="" alt="" />
+                                {connectApi && <img className="titleImg" src={connectApi[0].image_url} alt="" />}
                                 <img className="starImg" src="/images/star.png" alt="" />
                             </div>
                             <div className="listTextWrap">
@@ -151,7 +178,7 @@ const Main = () => {
                         </li>
                         <li>
                             <div className="listImgWrap">
-                                <img className="titleImg" src="" alt="" />
+                                {connectApi && <img className="titleImg" src={connectApi[1].image_url} alt="" />}
                                 <img className="starImg" src="/images/star.png" alt="" />
                             </div>
                             <div className="listTextWrap">
@@ -163,7 +190,7 @@ const Main = () => {
                         </li>
                         <li>
                             <div className="listImgWrap">
-                                <img className="titleImg" src="" alt="" />
+                                {connectApi && <img className="titleImg" src={connectApi[2].image_url} alt="" />}
                                 <img className="starImg" src="/images/star.png" alt="" />
                             </div>
                             <div className="listTextWrap">
@@ -175,7 +202,7 @@ const Main = () => {
                         </li>
                         <li>
                             <div className="listImgWrap">
-                                <img className="titleImg" src="" alt="" />
+                                {connectApi && <img className="titleImg" src={connectApi[3].image_url} alt="" />}
                                 <img className="starImg" src="/images/star.png" alt="" />
                             </div>
                             <div className="listTextWrap">
