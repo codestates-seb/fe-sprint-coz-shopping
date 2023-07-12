@@ -13,6 +13,7 @@ const StyleToastContainer = styled.ul`
   flex-wrap: wrap;
   padding: 12px 0;
   gap: 4px;
+  z-index: 10;
 `;
 
 export default function ToastConatiner({ toasts }) {

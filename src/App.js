@@ -6,7 +6,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ProductCard from "./components/ProductCard";
 import Modal from "./components/Modal";
 import ToastConatiner from "./components/ToastConatiner";
 import { v4 as uuidv4 } from "uuid";
@@ -50,7 +49,10 @@ function App() {
   const modalIsOpenHandler = (item) => {
     setModalIsOpen(item);
   };
-
+  const getRandomProducts = (products, count) => {
+    const shuffled = products.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
   return (
     <BrowserRouter>
       <ToastConatiner toasts={toasts} />
@@ -64,16 +66,18 @@ function App() {
         ""
       )}
       <Header />
-      {products.slice(0, 3)?.map((item) => (
-        <ProductCard
-          item={item}
-          key={item.id}
-          bookMarkHandler={itemBookMarkHandler}
-          modalHandler={modalIsOpenHandler}
-        />
-      ))}
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route
+          path="/"
+          element={
+            <MainPage
+              products={products}
+              bookMarkHandler={itemBookMarkHandler}
+              modalHandler={modalIsOpenHandler}
+              randomProducts={getRandomProducts}
+            />
+          }
+        />
         <Route path="/bookmark" element={<BookMark />} />
         <Route path="/products/list" element={<ProductListPage />} />
       </Routes>

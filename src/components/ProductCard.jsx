@@ -1,12 +1,12 @@
 import React from "react";
 import { styled } from "styled-components";
 
-const StyleProductCard = styled.div`
+const StyleProductCard = styled.li`
   width: 264px;
   height: 264px;
   position: relative;
 
-  div {
+  div:not(:nth-child(1)) {
     display: flex;
     margin-top: 4px;
   }
@@ -41,7 +41,7 @@ const StyleProductCard = styled.div`
     width: 264px;
     height: 210px;
     overflow: hidden;
-    border-radius: 7px;
+    border-radius: 12px;
     cursor: pointer;
     img {
       width: 264px;
@@ -54,7 +54,7 @@ function formatNumber(number) {
   return formattedNumber;
 }
 
-export default function ProductCard({ item, bookMarkHandler, modalHandler }) {
+export default function ProductCard({ product, bookMarkHandler, modalHandler }) {
   const {
     title,
     brand_image_url,
@@ -66,17 +66,17 @@ export default function ProductCard({ item, bookMarkHandler, modalHandler }) {
     price,
     sub_title,
     type,
-  } = item;
+  } = product;
 
   switch (type) {
     case "Product":
       return (
         <StyleProductCard>
           <div className="logo_box">
-            <img src={image_url} alt="Product Logo" onClick={() => modalHandler(item)} />
+            <img src={image_url} alt="Product Logo" onClick={() => modalHandler(product)} />
           </div>
           <img
-            onClick={() => bookMarkHandler(item)}
+            onClick={() => bookMarkHandler(product)}
             className="star"
             src={checked ? "/images/checkedStar.svg" : "/images/uncheckedStar.svg"}
             alt="book mark"
@@ -96,10 +96,10 @@ export default function ProductCard({ item, bookMarkHandler, modalHandler }) {
       return (
         <StyleProductCard>
           <div className="logo_box">
-            <img src={image_url} alt="Category Logo" onClick={() => modalHandler(item)} />
+            <img src={image_url} alt="Category Logo" onClick={() => modalHandler(product)} />
           </div>
           <img
-            onClick={() => bookMarkHandler(item)}
+            onClick={() => bookMarkHandler(product)}
             className="star"
             src={checked ? "/images/checkedStar.svg" : "/images/uncheckedStar.svg"}
             alt="book mark"
@@ -114,10 +114,10 @@ export default function ProductCard({ item, bookMarkHandler, modalHandler }) {
       return (
         <StyleProductCard>
           <div className="logo_box">
-            <img src={image_url} alt="Category Logo" onClick={() => modalHandler(item)} />
+            <img src={image_url} alt="Category Logo" onClick={() => modalHandler(product)} />
           </div>
           <img
-            onClick={() => bookMarkHandler(item)}
+            onClick={() => bookMarkHandler(product)}
             className="star"
             src={checked ? "/images/checkedStar.svg" : "/images/uncheckedStar.svg"}
             alt="book mark"
@@ -135,10 +135,10 @@ export default function ProductCard({ item, bookMarkHandler, modalHandler }) {
         <StyleProductCard>
           {" "}
           <div className="logo_box">
-            <img src={brand_image_url} alt="Brand Logo" onClick={() => modalHandler(item)} />
+            <img src={brand_image_url} alt="Brand Logo" onClick={() => modalHandler(product)} />
           </div>
           <img
-            onClick={() => bookMarkHandler(item)}
+            onClick={() => bookMarkHandler(product)}
             className="star"
             src={checked ? "/images/checkedStar.svg" : "/images/uncheckedStar.svg"}
             alt="book mark"

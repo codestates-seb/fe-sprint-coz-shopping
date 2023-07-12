@@ -4,5 +4,5 @@ import { styled } from "styled-components";
 
 const StyleBookMarkPageMain = styled(StyleMain)``;
 export default function BookMark() {
-  return <StyleBookMarkPageMain>bookmark</StyleBookMarkPageMain>;
+  return <StyleBookMarkPageMain></StyleBookMarkPageMain>;
 }
