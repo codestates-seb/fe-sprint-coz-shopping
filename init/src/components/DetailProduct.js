@@ -10,6 +10,7 @@ const Container = styled.div`
   width: 264px;
   height: 300px;
   margin: 0 24px;
+  position: relative;
 `;
 
 const PContainer = styled.div`
@@ -21,6 +22,8 @@ const PContainer = styled.div`
   font-size: 0.9rem;
   font-weight: bold;
   height: 54px;
+  position: absolute;
+  top: 85%;
 `;
 
 const TitleContainer = styled.div`
@@ -32,6 +35,16 @@ const TitleContainer = styled.div`
   width: 100%;
 `;
 
+const ImageCotainer = styled.div`
+  position: absolute;
+`;
+
+const StarContainer = styled.div`
+  position: absolute;
+  top: 80%;
+  left: 85%;
+`;
+
 const ProductImg = styled.img`
   width: 264px;
   height: 210px;
@@ -39,17 +52,12 @@ const ProductImg = styled.img`
   content: url(${(props) => props.url};);
   cursor: pointer;
 `;
-
-const ProductImg2 = styled.img`
-  width: 264px;
-  height: 210px;
-  border-radius: 10%;
-  content: url(${(props) => props.url2};);
-  cursor: pointer;
-`;
-
 const BlueP = styled.p`
   color: blue;
+`;
+const StarImg = styled.img`
+  cursor: pointer;
+  position: absolute;
 `;
 
 function DetailProduct({ elem }) {
@@ -57,9 +65,12 @@ function DetailProduct({ elem }) {
   const [first, setFirst] = useState("");
   const [second, setSecond] = useState("");
   const [third, setThird] = useState("");
-
+  const [bookMark, setBookMark] = useState(false);
   const clickHandler = (event) => {
     setIsOpen(!isOpen);
+  };
+  const bookMarkClickHandler = (event) => {
+    setBookMark(!bookMark);
   };
 
   useEffect(() => {
@@ -93,10 +104,29 @@ function DetailProduct({ elem }) {
           url2={elem.brand_image_url}
         />
       ) : null}
-      <ProductImg
-        onClick={clickHandler}
-        url={elem.image_url ? elem.image_url : elem.brand_image_url}
-      />
+      <ImageCotainer>
+        <ProductImg
+          onClick={clickHandler}
+          url={elem.image_url ? elem.image_url : elem.brand_image_url}
+        />
+        <StarContainer>
+          {bookMark && (
+            <StarImg
+              src="/bookmark.png"
+              alt="bookmark"
+              onClick={bookMarkClickHandler}
+            />
+          )}
+          {!bookMark && (
+            <StarImg
+              src="/bookmarkYellow.png"
+              alt="bookmark"
+              onClick={bookMarkClickHandler}
+            />
+          )}
+        </StarContainer>
+      </ImageCotainer>
+
       <PContainer>
         <TitleContainer>{first ? <p>{first}</p> : null}</TitleContainer>
         {second ? <p>{second}</p> : null}
