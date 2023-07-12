@@ -24,6 +24,9 @@ const HeaderContainer = styled.header`
     margin-left: 76px;
     margin-right: 12px;
   }
+  .right {
+    position: relative;
+  }
   .right > .burger-icon {
     width: 34px;
     height: 24px;
@@ -52,6 +55,7 @@ function Header() {
           className="burger-icon"
           onClick={openDropdownMenu}
         />
+        <DropdownMenu />
       </div>
     </HeaderContainer>
   );
