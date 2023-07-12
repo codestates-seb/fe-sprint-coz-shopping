@@ -16,6 +16,7 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   padding: 1rem 3rem;
   color: black;
+  background-color: white;
 
   .logo-container {
     color: black;

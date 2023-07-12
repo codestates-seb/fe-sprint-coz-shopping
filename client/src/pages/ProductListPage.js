@@ -3,13 +3,13 @@ import Header from '../common/Header';
 import Footer from '../common/Footer';
 import styled from 'styled-components';
 
+
 const ProductListContainer = styled.div`
-  position: sticky;
-  top: 2rem;
-  /* padding-top: 2rem; */
-  height: 100vh;
-  overflow-y: auto;
-  overflow: hidden;
+  padding: 1rem 3rem;
+
+  li {
+    list-style: none;
+  }
 `;
 
 const ProductListPage = (props) => {
