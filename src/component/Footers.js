@@ -8,7 +8,7 @@ const Footer = styled.footer`
         height:58px;
         /* width:1280px; */
         margin:auto;
-        border-top:solid 1px black;
+        border-top:solid 1px #0000001A;;
         display:flex;
         flex-direction: column;
         justify-content: center;

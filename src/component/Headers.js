@@ -5,41 +5,41 @@ import { Link } from 'react-router-dom';
 // 헤더
 const Header = styled.header`
     position:sticky;
-    .headerWhap{ 
-        background: #FFF;
-        box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.10);
-        /* width:1280px; */
-        height:80px;
-        display : flex;
-        justify-content: space-between;
-        align-items: center;
-        margin:auto;
-        > .headerLeft {
-            margin-left:76px;
-            display:flex;
+    .headerContainer {
+            background: #FFF;
+            box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.10);
+        .headerWhap{
+            width:70%;
+            height:80px;
+            display : flex;
+            justify-content: space-between;
             align-items: center;
-            > .leftLink {
-                > .leftImg {
-                    width:55px;
-                    height:30px;
-                    cursor: pointer;
+            margin:auto;
+            > .headerLeft {
+                display:flex;
+                align-items: center;
+                > .leftLink {
+                    > .leftImg {
+                        width:55px;
+                        height:30px;
+                        cursor: pointer;
+                    }
+                }
+                > .leftText {
+                    margin-left:12px;
+                    font-weight:700;
+                    font-size:32px;
+                    line-height:28.17px;
                 }
             }
-            > .leftText {
-                margin-left:12px;
-                font-weight:700;
-                font-size:32px;
-                line-height:28.17px;
-            }
-            
-        }
-        > .headerRight { 
-            margin-right:110px;
-            > .rightImg {
+            > .headerRight { 
+                > .rightImg {
                 cursor: pointer;
+                }
             }
         }
     }
+    
 
     // 모달 (시멘틱요소:nav)
     .modal {
@@ -47,9 +47,8 @@ const Header = styled.header`
         width:200px;
         height:172px;
         top:52px;
-        right: 64px;
+        right: 240px;
         > .modalImg {
-            
             > .modalArrow{ 
                 position:absolute;
                 left:130px;
@@ -68,7 +67,7 @@ const Header = styled.header`
             border-radius:12px;
             background: #FFF;
             box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.10);
-            
+            z-index:999;
             > .greetingMessage {
                 display:flex;
                 align-items: center;
@@ -100,7 +99,7 @@ const Header = styled.header`
                 justify-content: center;
                 padding:0;
             }
-            > div:nth-child(2) {
+            > a:nth-child(2) {
                 border-bottom : 0.5px solid rgba(0, 0, 0, 0.10);
                 border-top : 0.5px solid rgba(0, 0, 0, 0.10);
             }
@@ -120,21 +119,22 @@ const Headers = () => {
         <>
             {/* 헤더 */}
             <Header>
-                <div className="headerWhap">
-                    <div className="headerLeft">
-                        <Link to="/" className="leftLink">
-                            <img className="leftImg" src="/images/logo.png" alt="코드스테이츠 로고" />
-                        </Link>
-                        <h1 className="leftText">COZ Shopping</h1>
+                <div className="headerContainer">
+                    <div className="headerWhap">
+                        <div className="headerLeft">
+                            <Link to="/" className="leftLink">
+                                <img className="leftImg" src="/images/logo.png" alt="코드스테이츠 로고" />
+                            </Link>
+                            <h1 className="leftText">COZ Shopping</h1>
 
-                    </div>
-                    <div className="headerRight" onClick={menuClick}>
-                        <img className="rightImg" src="/images/unnamed.png" alt="메뉴 버튼" />
+                        </div>
+                        <div className="headerRight" onClick={menuClick}>
+                            <img className="rightImg" src="/images/unnamed.png" alt="메뉴 버튼" />
+                        </div>
                     </div>
                 </div>
 
                 {/* 모달 */}
-                {/* 메뉴바 클릭시 모달창 On/Off */}
                 {ModalOpen && (
                     <nav className="modal">
                         <div className="modalImg">
@@ -156,7 +156,7 @@ const Headers = () => {
                             {/* 북마크 페이지 이동 */}
                             <Link to="/Bookmark" className="pageConversion">
                                 <div className="modalText">
-                                    <img className="modalArrow" src="/images/star.png" alt="북마크 페이지" />
+                                    <img className="modalArrow" src="/images/starOff.png" alt="북마크 페이지" />
                                     <span>북마크 페이지</span>
                                 </div>
                             </Link>
