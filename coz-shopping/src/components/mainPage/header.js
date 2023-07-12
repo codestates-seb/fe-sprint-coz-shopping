@@ -1,10 +1,17 @@
 
 import React from 'react';
-
+import { useState } from 'react';
+import HeaderModal from '../productModal/headerModal';
 
 
 
 const Header = ()=>{
+    const [modal, setModal] = useState(false);
+
+    const modalHandler = ()=>{
+        setModal(!modal)
+    }
+
     return(
         <div className='header-container'>
             <div className='header-title-container'>
@@ -12,8 +19,9 @@ const Header = ()=>{
                 <span className='header-title'>COZ shopping</span>
             </div>
             <div className='header-button-container'>
-            <img src='img/햄버거 버튼.png'></img>
+            <img src='img/햄버거 버튼.png' onClick={modalHandler}></img>
             </div>
+            {modal ? <HeaderModal></HeaderModal> : null}
         </div>
     )
 }
