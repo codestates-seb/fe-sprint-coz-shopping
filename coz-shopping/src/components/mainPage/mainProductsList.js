@@ -3,9 +3,10 @@ import React from 'react';
 
 
 
+
 const MainProductList = (props)=>{
 
- 
+    console.log(props.item[0])
 
 
 
@@ -16,10 +17,34 @@ const MainProductList = (props)=>{
                 <h2>상품 리스트</h2>
                 <div className='product-item-container'>
                     <ul>
+                        <li>
+                            <div className='product-item-img'>
+                            <img src='img/Modal1.png'></img>
+                            </div>
+                            <div className='product-itme-content'>
+                                <span></span>
+                                <span>15%</span>
+                            </div>
+                            <div className='product-item-price'><span>12,900원</span></div>
+                        </li>
                         <li>1</li>
-                        <li>2</li>
                         <li>1</li>
-                        <li>2</li>
+                        <li>1</li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div className='product-item-img'>
+                            <img src='img/Modal1.png'></img>
+                            </div>
+                            <div className='product-itme-content'>
+                                <span>{}</span>
+                                <span>15%</span>
+                            </div>
+                            <div className='product-item-price'><span>12,900원</span></div>
+                        </li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
                     </ul>
 
                 </div>
