@@ -14,16 +14,9 @@ const StyleToastItem = styled.li`
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
   font-weight: bold;
   transition: all.7s;
-  animation: toastItem 0.7s;
   transform: translate(-110%);
   &.fade-out {
     transform: translate(100%);
-  }
-
-  @keyframes toastItem {
-    0% {
-      transform: translate(100%);
-    }
   }
 `;
 
@@ -33,7 +26,6 @@ export default function ToastItem({ toast }) {
   useEffect(() => {
     setTimeout(() => {
       setIsFading(true);
-      //   }
     }, 2300);
   }, []);
 
