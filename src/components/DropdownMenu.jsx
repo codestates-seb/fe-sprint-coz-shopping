@@ -1,3 +1,5 @@
-function DropdownMenu() {}
+function DropdownMenu() {
+  return;
+}
 
 export default DropdownMenu;
