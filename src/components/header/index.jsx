@@ -9,9 +9,13 @@ import productIcon from "asset/product_icon.png";
 import BookmarkIcon from "asset/bookmark_icon.png";
 
 function Header() {
-  const [menu, setMenu] = useState(false);
+  const [isActive, setActive] = useState(false);
   return (
-    <Container>
+    <Container
+      onMouseLeave={() => {
+        setActive(false);
+      }}
+    >
       <header>
         <Link to="/">
           <Title>
@@ -20,7 +24,7 @@ function Header() {
           </Title>
         </Link>
         <div>
-          {menu ? (
+          {isActive ? (
             <Menu>
               <div>
                 <a>OOO님, 안녕하세요!</a>
@@ -43,7 +47,7 @@ function Header() {
             src={hamburgerBtn}
             alt="hamburger button"
             onClick={() => {
-              setMenu(true);
+              setActive(true);
             }}
           />
         </div>

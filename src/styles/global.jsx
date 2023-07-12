@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
     --size-half: 5px;
     --size-base: 10px;
     --font-family-base: 'Noto Sans KR', 'sans-serif';
+    --font-size-sm: 12px;
     --font-size-base: 16px;
     --font-size-lg: 24px;
     --font-size-title: 32px;
