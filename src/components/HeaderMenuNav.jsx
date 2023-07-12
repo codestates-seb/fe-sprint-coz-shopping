@@ -11,7 +11,7 @@ const HeaderMenuNavContainer = styled.nav`
   height: 150px;
   display: flex;
   flex-direction: column;
-  z-index: 10;
+  z-index: 7;
 
   .triangle {
     width: 16px;

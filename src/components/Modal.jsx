@@ -6,7 +6,7 @@ const StyleModal = styled.div`
   height: 100vh;
   width: 100vw;
   background: rgba(255, 255, 255, 0.4);
-  z-index: 30;
+  z-index: 8;
   color: white;
   .modal-item {
     background-size: cover;
