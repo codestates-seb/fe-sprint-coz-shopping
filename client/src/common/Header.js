@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { ReactComponent as LogoImg } from '../assets/logo.svg';
-import { ReactComponent as BurgerImg } from '../assets/buger.svg';
+import { ReactComponent as BurgerImg } from '../assets/burger.svg';
 import HeaderNav from './HeaderNav';
 
 /** Style */
