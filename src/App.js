@@ -41,7 +41,7 @@ function App() {
       setModalIsOpen((preModalItem) => ({ ...preModalItem, checked: !preModalItem.checked }));
     }
     addToast(!item.checked);
-
+    setModalIsOpen(false);
     setTimeout(() => {
       removeToast();
     }, 3000);

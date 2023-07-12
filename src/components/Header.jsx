@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import HeaderMenuNav from "./HeaderMenuNav";
@@ -32,10 +32,17 @@ const StyleHeader = styled.header`
 `;
 
 export default function Header() {
-  const [isMenuShow, setisMenuShow] = useState(false);
-  const menuToggleHandler = () => {
-    setisMenuShow((pre) => !pre);
+  const [isMenuShow, setIsMenuShow] = useState(false);
+  const menuToggleHandler = (e) => {
+    e.stopPropagation();
+    setIsMenuShow((pre) => !pre);
   };
+
+  useEffect(() => {
+    window.addEventListener("click", () => {
+      setIsMenuShow(false);
+    });
+  }, []);
   return (
     <StyleHeader>
       <div className="Header-logo">

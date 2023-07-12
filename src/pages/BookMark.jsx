@@ -13,6 +13,14 @@ const StyleBookMarkPageMain = styled(StyleMain)`
     flex-wrap: wrap;
     flex: 1;
   }
+  h5 {
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: auto;
+    font-size: 24px;
+    color: #80808080;
+  }
 `;
 
 export default function BookMark({ products, bookMarkHandler, modalHandler }) {
@@ -47,15 +55,21 @@ export default function BookMark({ products, bookMarkHandler, modalHandler }) {
       <ul>
         {products
           .filter((el) => (el.type === category || category === "All") && el.checked)
-          .slice(0, pageNum * 12)
-          .map((el) => (
-            <ProductCard
-              key={el.id}
-              product={el}
-              bookMarkHandler={bookMarkHandler}
-              modalHandler={modalHandler}
-            />
-          ))}
+          .slice(0, pageNum * 12).length ? (
+          products
+            .filter((el) => (el.type === category || category === "All") && el.checked)
+            .slice(0, pageNum * 12)
+            .map((el) => (
+              <ProductCard
+                key={el.id}
+                product={el}
+                bookMarkHandler={bookMarkHandler}
+                modalHandler={modalHandler}
+              />
+            ))
+        ) : (
+          <h5>북마크된 항목이 존재하지 않습니다</h5>
+        )}
       </ul>
     </StyleBookMarkPageMain>
   );

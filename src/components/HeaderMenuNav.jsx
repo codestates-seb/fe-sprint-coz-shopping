@@ -94,7 +94,7 @@ const Item = styled.div`
 
 export default function HeaderMenuNav({ menuToggleHandler }) {
   return (
-    <HeaderMenuNavContainer>
+    <HeaderMenuNavContainer onClick={(e) => e.stopPropagation()}>
       <Triangle />
       <ItemList>
         <UserInfo>OOO님, 안녕하세요</UserInfo>

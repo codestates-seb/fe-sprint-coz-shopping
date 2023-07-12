@@ -57,7 +57,7 @@ export default function MainPage({ products, bookMarkHandler, modalHandler }) {
                 />
               ))
           ) : (
-            <h5>북마크된 항목이 없어요!</h5>
+            <h5>북마크된 항목이 존재하지 않습니다</h5>
           )}
         </ul>
       </section>
