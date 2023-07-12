@@ -18,19 +18,22 @@ const MainContainer = styled.div`
   align-items: start;
 `;
 
+const Container = styled.div`
+  height: 100vh;
+`;
+
 function Main() {
-  const [type, setType] = useState(null);
   return (
-    <>
+    <Container>
       <Header />
       <MainContainer>
         <ProdSpan>상품 페이지</ProdSpan>
-        <Product type={type} />
+        <Product />
         <ProdSpan>북마크 리스트</ProdSpan>
-        <Product type={type} />
+        <Product />
       </MainContainer>
       <Footer />
-    </>
+    </Container>
   );
 }
 

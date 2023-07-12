@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import Modal from "./Modal";
 
 const Container = styled.div`
   display: flex;
@@ -24,7 +25,7 @@ const PContainer = styled.div`
 
 const TitleContainer = styled.div`
   display: flex;
-  padding-top: 8px;
+  padding-top: 5px;
   flex-direction: column;
   justify-content: center;
   align-items: start;
@@ -39,36 +40,73 @@ const ProductImg = styled.img`
   cursor: pointer;
 `;
 
-function DetailProduct({ elem, type }) {
+const ProductImg2 = styled.img`
+  width: 264px;
+  height: 210px;
+  border-radius: 10%;
+  content: url(${(props) => props.url2};);
+  cursor: pointer;
+`;
+
+const BlueP = styled.p`
+  color: blue;
+`;
+
+function DetailProduct({ elem }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [first, setFirst] = useState("");
+  const [second, setSecond] = useState("");
+  const [third, setThird] = useState("");
+
   const clickHandler = (event) => {
-    // 모달창 오픈
     setIsOpen(!isOpen);
   };
 
   useEffect(() => {
-    switch (type) {
+    switch (elem.type) {
       case "Brand":
+        setFirst(elem.brand_name);
+        setSecond("관심고객 수 " + elem.follower);
         break;
       case "Product":
+        setFirst(elem.title);
+        setSecond(elem.discountPercentage + "%");
+        setThird(elem.price + "원");
         break;
       case "Exhibiton":
+        setFirst(elem.title);
+        setSecond(elem.subtitle);
         break;
       default:
+        setFirst("#" + elem.title);
         break;
     }
   }, []);
 
   return (
     <Container>
-      <ProductImg onClick={clickHandler} url={elem.image_url} />
+      {isOpen ? (
+        <Modal
+          url={elem.image_url}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          url2={elem.brand_image_url}
+        />
+      ) : null}
+      <ProductImg
+        onClick={clickHandler}
+        url={elem.image_url ? elem.image_url : elem.brand_image_url}
+      />
       <PContainer>
-        <TitleContainer>
-          {elem.title ? <p>{elem.title}</p> : null}
-        </TitleContainer>
-        {elem.subtitle ? <p>{elem.subtitle}</p> : null}
-        {elem.discountPercentage ? <p>{elem.discountPercentage}%</p> : null}
-        {elem.discountPercentage ? <p>{elem.price}원</p> : null}
+        <TitleContainer>{first ? <p>{first}</p> : null}</TitleContainer>
+        {second ? <p>{second}</p> : null}
+        {third ? (
+          elem.discountPercentage ? (
+            <BlueP>{third}</BlueP>
+          ) : (
+            <p>{third}</p>
+          )
+        ) : null}
       </PContainer>
     </Container>
   );
