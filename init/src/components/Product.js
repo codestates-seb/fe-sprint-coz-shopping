@@ -10,7 +10,7 @@ const ProdContainer = styled.div`
   align-items: center;
 `;
 
-function Product({ type }) {
+function Product() {
   const [prodList, setProdList] = useState([]);
   useEffect(() => {
     axios
@@ -24,7 +24,7 @@ function Product({ type }) {
     <>
       <ProdContainer>
         {prodList.map((elem) => {
-          return <DetailProduct key={elem.id} elem={elem} type={type} />;
+          return <DetailProduct key={elem.id} elem={elem} />;
         })}
       </ProdContainer>
     </>
