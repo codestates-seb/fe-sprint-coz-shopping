@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Yeon+Sung&display=swap");
+
+body {
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Noto Sans KR", sans-serif;
+  min-height: 100vh;
+  margin: 0px;
+}
+
+@media (min-width: 650px) {
+  .App {
+    width: 100vw;
+  }
+}
+
+#root {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  /* a는 알파를 의미함. 즉 transparency인 투명도를 의미함 */
+}
+
+.App {
+  min-height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+header > div {
+  display: flex;
+}
+
+header .logo {
+  width: 500px;
+}
+
+header .logo > img {
+  max-width: 55px;
+  max-height: 30px;
+  margin-left: 400px;
+  margin-right: 10px;
+}
+
+header .center_bar {
+  width: 1000px;
+  justify-content: start;
+  display: flex;
+}
+
+header .logo_name > img {
+  margin-top: 10px;
+  max-height: 30px;
+  max-width: 230px;
+}
+
+header .menu_bar {
+  width: 300px;
+  justify-content: start;
+  height: 20px;
+  width: 30px;
+  cursor: pointer;
+}
+
+/* ProductList */
+.ProductList {
+  margin: 50px;
+  font-weight: bold;
+}
+
+/* BookmarkList */
+.BookmarkList {
+  margin: 50px;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 20px;
+}
