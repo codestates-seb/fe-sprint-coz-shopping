@@ -18,7 +18,7 @@ export default function Header({ menuPopUp }) {
 }
 
 
-// styled-component
+// styled-components
 const HeaderBackground = styled.header`
     display: flex;
     justify-content: space-between;

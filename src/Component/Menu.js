@@ -26,7 +26,7 @@ export default function Menu({ menuPopUp }) {
 }
 
 
-// styled-component
+// styled-components
 const MenuBackground = styled.div`
     position: absolute;
     background-color: transparent;
