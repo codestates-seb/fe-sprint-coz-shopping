@@ -7,6 +7,9 @@ import styled from 'styled-components';
 export default function Menu({ menuPopUp }) {
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> MainPage
         <MenuBackground onClick={menuPopUp}>
             <MenuModal src={menu} />
             <MenuUser>재연님 안녕하세요!</MenuUser>
@@ -23,6 +26,7 @@ export default function Menu({ menuPopUp }) {
                 </MenuBookmark>
             </RouterLink>
         </MenuBackground>
+<<<<<<< HEAD
 =======
             <MenuBackground onClick={menuPopUp}>
                 <MenuModal src={menu} />
@@ -40,6 +44,8 @@ export default function Menu({ menuPopUp }) {
                     </MenuBookmark>
                 </RouterLink>
             </MenuBackground>
+>>>>>>> MainPage
+=======
 >>>>>>> MainPage
     )
 }
