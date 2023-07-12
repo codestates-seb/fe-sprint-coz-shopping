@@ -1,11 +1,21 @@
-import { Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header";
+
+import BookmarkPage from "./pages/BookmarkPage";
+import ProductListPage from "./pages/ProductListPage";
+import MainPage from "./pages/MainPage";
 
 function App() {
   return (
     <>
-      <Header></Header>
+      <BrowserRouter>
+        <MainPage />
+        <Routes>
+          <Route exact path="/" component={MainPage}></Route>
+          <Route path="/productlistpage" component={ProductListPage}></Route>
+          <Route path="/bookmarkpage" component={BookmarkPage}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
