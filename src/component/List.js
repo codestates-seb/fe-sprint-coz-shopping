@@ -1,14 +1,14 @@
-export default function List( {} ) {
+export default function List( {obj} ) {
     return (
         <li className="List">
-            <img className="imgList" src="" alt="" />
+            <img className="Listimg" src={`${obj.brand_image_url ? obj.brand_image_url : obj.image_url}`} alt="" />
             <div className="content">
-                <span className="name">상품 이름</span>
-                <span className="per">상품 퍼센트</span>
+                <span className="name">{obj.brand_name ? obj.brand_name : obj.title}</span>
+                <span className="per">{obj.discountPercentage ? `${obj.discountPercentage}%` : ``}</span>
             </div>
             <div className="content">
-                <span className="discribe">상품 설명</span>
-                <span className="price">상품 가격</span>
+                <span className="discribe">{obj.sub_title ? obj.sub_title : ''}</span>
+                <span className="price">{obj.price ? `${Number(obj.price).toLocaleString('ko-KR')}원` : ``}</span>
             </div>
         </li >
     )

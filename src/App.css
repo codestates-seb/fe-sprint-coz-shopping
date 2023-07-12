@@ -6,8 +6,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    border: 2px solid black;
+}
 
-    border: 1px solid red;
+.body {
+    width: 1280px;
+    height: 752px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 2px solid rgb(14, 169, 91); */
+}
+
+.body::-webkit-scrollbar {
+    display: none;
 }
 
 header {
@@ -16,41 +30,101 @@ header {
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
-    border: 1px solid green;
+    padding: 0px 76px;
+    box-shadow: 0px 15px 10px -10px rgb(214, 214, 214);
+
+    /* border: 1px solid green; */
 }
 
-header > button {
+.logo {
+    width: 55px;
+    height: 30px;
+    margin-right: 12px;
+}
+
+button.title {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'inter';
+    color: black;
+    border: none;
+    background-color: white;
+}
+
+button.menu {
+    width: 34px;
+    height: 24px;
+    background-color: white;
+    border: none;
+    padding: 0px;
+
+    display: flex;
+    align-items: center;
+}
+
+button.menu > img {
     width: 34px;
     height: 24px;
 }
 
 .main {
     width: 1280px;
-    height: 694px;
+    height: 794px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    overflow: auto;
-
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
 }
 
 .container {
     width: 1128px;
-    height: 640px;
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 }
 
-.listBtn {
+.product {
+    width: 1280px;
+    height: 694px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 24px;
+
+    /* border: 1px solid pink; */
+}
+
+.bookmark {
+    width: 1280px;
+    height: 694px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px solid pink;
+}
+
+.ListBtn {
     width: 179px;
     height: 38px;
+
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'inter';
+
+    background-color: white;
+    border: none;
+    padding: none;
+    text-align: left;
 }
 
-ul {
+ul.ProductList {
     display: flex;
     justify-content: space-between;
     padding: 0px;
@@ -59,8 +133,20 @@ ul {
     width: 1128px;
 }
 
-.List {
+ul.BookmarkList {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 0px;
+    flex-wrap: wrap;
+    width: 1128px;
+}
+
+li {
     list-style-type: none;
+}
+
+.List {
     width: 264px;
     height: 264px;
     margin: 12px 0px;
@@ -72,20 +158,92 @@ ul {
     height: 24px;
 }
 
-.imgList {
+.Listimg {
     width: 264px;
     height: 210px;
+    border-radius: 12px;
+    border: 1px solid #D9D9D9;
+}
+
+.type {
+    width: 554px;
+    height: 122px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 0px;
+    /* border: 1px solid black; */
+}
+
+.typeList {
+    width: 82px;
+    height: 110px;
+    /* border: 1px solid black; */
+}
+
+.typeList>img {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    /* border: 1px solid black; */
+}
+
+.typeName {
+    width: 82px;
+    text-align: center;
+    font-family: 'inter';
+    font-size: 16px;
+    /* font-weight: 400; */
+    /* border: 1px solid black; */
+}
+
+.name {
+    text-align: left;
+    font-family: 'inter';
+    font-weight: 800;
+}
+
+.per {
+    text-align: right;
+    font-family: 'inter';
+    font-weight: 700;
+}
+
+.discribe {
+    text-align: left;
+    font-family: 'inter';
+}
+
+.price {
+    text-align: right;
+    font-family: 'inter';
 }
 
 footer {
+    width: 1280px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    color: gray;
-    width: 1280px;
-    height: 58px;
+    border: 1px solid rgb(201, 201, 201);
+}
 
-    border: 1px solid blue;
+.footerBox {
+    height: 58px;
+    color: gray;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerBox > div {
+    height: 18px;
+
+    font-family: 'inter';
+    font-size: 12px;
+    font-weight: 400;
 }

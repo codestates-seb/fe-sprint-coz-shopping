@@ -4,11 +4,13 @@ export default function Header() {
     return (
         <header>
             <Link to="/">
-                <img className="logo" src='src/image/logo.png' />
-                <span className="title">COZ Shopping</span>
+                <button className="title">
+                    <img className="logo" src='../로고.png' />
+                    <span>COZ Shopping</span>
+                </button>
             </Link>
             <button className="menu">
-                {/* <img src='src/image/햄버거 버튼.png' /> */}
+                <img src='../햄버거 버튼.png' />
             </button>
         </header>
     )

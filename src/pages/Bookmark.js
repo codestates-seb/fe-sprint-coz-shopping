@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom"
-import List from './../component/List'
+import List from '../component/List'
+import Type from '../component/Type'
 
 export default function Bookmark({ isBookmark }) {
 
     return (
-        <>
-            <ul className='Bookmark'>
-                {isBookmark.map(el => { return <List /> })}
+        <div className="bookmark">
+            <Type />
+            <ul className='BookmarkList'>
+                {isBookmark ? isBookmark.map((el, idx) => { return <List key={idx} /> }) : ''}
             </ul>
-        </>
+        </div>
     )
 }
