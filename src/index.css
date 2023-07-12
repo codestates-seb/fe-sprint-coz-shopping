@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding:0;
+  background-color: darkgray;
+  height:1000px;
+  width:100%
+}
+header{
+  width:100%;
+  height:100px;
+  background: green;
+}
+.main{
+  width:100%;
+  height:1000px;
+  background: red;
+}
