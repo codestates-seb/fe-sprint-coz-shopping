@@ -1,9 +1,11 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Toast from "../components/Toast";
 import DetailProduct from "../components/DetailProduct";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import axios from "axios";
+
 const Container = styled.div`
   height: 100vh;
 `;
@@ -32,10 +34,14 @@ const P = styled.p`
   text-align: center;
 `;
 
-function ProductList() {
+function ProductList({ bookMark, setBookMark }) {
   const [list, setList] = useState([]);
-  const [type, setType] = useState("");
   const [filtered, setFiltered] = useState([]);
+  const [toastState, setToastState] = useState(false);
+
+  function checkInputValues2() {
+    setToastState(true);
+  }
 
   useEffect(() => {
     axios
@@ -46,15 +52,14 @@ function ProductList() {
       });
   }, []);
 
-  const clickHandler = (strType) => {
-    if (strType === "all") {
+  const clickHandler = (type) => {
+    if (type === "all") {
       setFiltered(list);
       return;
     }
-    setType(strType);
     setFiltered(
       list.filter((elem) => {
-        return elem.type === strType;
+        return elem.type === type;
       })
     );
   };
@@ -86,10 +91,20 @@ function ProductList() {
       </TypeDiv>
       <Products>
         {filtered.map((elem) => {
-          return <DetailProduct elem={elem} key={elem.id}></DetailProduct>;
+          return (
+            <DetailProduct
+              elem={elem}
+              key={elem.id}
+              bookMark={bookMark}
+              setBookMark={setBookMark}
+              setToastState={setToastState}
+              checkInputValues2={checkInputValues2}
+            ></DetailProduct>
+          );
         })}
       </Products>
       <Footer />
+      {toastState === true ? <Toast setToastState={setToastState} /> : null}
     </Container>
   );
 }

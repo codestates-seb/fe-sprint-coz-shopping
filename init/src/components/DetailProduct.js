@@ -60,20 +60,46 @@ const StarImg = styled.img`
   position: absolute;
 `;
 
-function DetailProduct({ elem }) {
+function DetailProduct({
+  elem,
+  bookMark,
+  setBookMark,
+  stars,
+  checkInputValues,
+  checkInputValues2,
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [first, setFirst] = useState("");
   const [second, setSecond] = useState("");
   const [third, setThird] = useState("");
-  const [bookMark, setBookMark] = useState(false);
+  const [star, setStar] = useState(false);
+
   const clickHandler = (event) => {
     setIsOpen(!isOpen);
   };
+
   const bookMarkClickHandler = (event) => {
-    setBookMark(!bookMark);
+    if (star === false) {
+      setStar(true);
+      setBookMark([...bookMark, elem]);
+      if (checkInputValues) {
+        checkInputValues();
+      } else {
+        checkInputValues2();
+      }
+    } else {
+      setStar(false);
+      const filtered = bookMark.filter((original) => {
+        return original !== elem;
+      });
+      setBookMark(filtered);
+    }
   };
 
   useEffect(() => {
+    if (stars) {
+      setStar(true);
+    }
     switch (elem.type) {
       case "Brand":
         setFirst(elem.brand_name);
@@ -110,14 +136,14 @@ function DetailProduct({ elem }) {
           url={elem.image_url ? elem.image_url : elem.brand_image_url}
         />
         <StarContainer>
-          {bookMark && (
+          {star && (
             <StarImg
               src="/bookmark.png"
               alt="bookmark"
               onClick={bookMarkClickHandler}
             />
           )}
-          {!bookMark && (
+          {!star && (
             <StarImg
               src="/bookmarkYellow.png"
               alt="bookmark"

@@ -10,7 +10,7 @@ const ProdContainer = styled.div`
   align-items: center;
 `;
 
-function Product() {
+function Product({ bookMark, setBookMark, checkInputValues }) {
   const [prodList, setProdList] = useState([]);
   useEffect(() => {
     axios
@@ -24,7 +24,15 @@ function Product() {
     <>
       <ProdContainer>
         {prodList.map((elem) => {
-          return <DetailProduct key={elem.id} elem={elem} />;
+          return (
+            <DetailProduct
+              key={elem.id}
+              elem={elem}
+              bookMark={bookMark}
+              setBookMark={setBookMark}
+              checkInputValues={checkInputValues}
+            />
+          );
         })}
       </ProdContainer>
     </>
