@@ -9,7 +9,7 @@ export default function Menu({ menuPopUp }) {
         <MenuBackground onClick={menuPopUp}>
             <MenuModal src={menu} />
             <MenuUser>재연님 안녕하세요!</MenuUser>
-            <RouterLink to="/product/list">
+            <RouterLink to="/products/list">
                 <MenuProductList>
                     <MenuIcon src={productListIcon}></MenuIcon>
                     <MenuName className="menu__name">상품리스트 페이지</MenuName>
