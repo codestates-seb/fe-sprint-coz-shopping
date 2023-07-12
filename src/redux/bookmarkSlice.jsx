@@ -14,5 +14,5 @@ export const bookmarkSlice = createSlice({
   },
 });
 
-export const { add, remove } = todoSlice.actions;
-export default todoSlice.reducer;
+export const { add, remove } = bookmarkSlice.actions;
+export default bookmarkSlice.reducer;
