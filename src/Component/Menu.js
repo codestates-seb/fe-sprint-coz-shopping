@@ -7,22 +7,20 @@ import styled from 'styled-components';
 export default function Menu({ isMenu, menuPopUp }) {
     return (
             <MenuBackground onClick={menuPopUp}>
-                <MenuBox className={isMenu ? "active" : ""}>
-                    <MenuModal src={menu} />
-                    <MenuUser>재연님 안녕하세요!</MenuUser>
-                    <RouterLink to="/products/list">
-                        <MenuProductList>
-                            <MenuIcon src={productListIcon}></MenuIcon>
-                            <MenuName className="menu__name">상품리스트 페이지</MenuName>
-                        </MenuProductList>
-                    </RouterLink>
-                    <RouterLink to="/bookmark">
-                        <MenuBookmark>
-                            <MenuIcon src={bookmarkIcon}></MenuIcon>
-                            <MenuName className="menu__name">북마크 페이지</MenuName>
-                        </MenuBookmark>
-                    </RouterLink>
-                </MenuBox>
+                <MenuModal src={menu} />
+                <MenuUser>재연님 안녕하세요!</MenuUser>
+                <RouterLink to="/products/list">
+                    <MenuProductList>
+                        <MenuIcon src={productListIcon}></MenuIcon>
+                        <MenuName className="menu__name">상품리스트 페이지</MenuName>
+                    </MenuProductList>
+                </RouterLink>
+                <RouterLink to="/bookmark">
+                    <MenuBookmark>
+                        <MenuIcon src={bookmarkIcon}></MenuIcon>
+                        <MenuName className="menu__name">북마크 페이지</MenuName>
+                    </MenuBookmark>
+                </RouterLink>
             </MenuBackground>
     )
 }
@@ -36,27 +34,6 @@ const MenuBackground = styled.div`
     height: 100vh;
     font-size: 14px;
     z-index: 100;
-`
-
-const MenuBox = styled.div`
-  animation: modaldown 0.5s linear;
-
-@keyframes modaldown {
-  from {
-    transform: translateY(-10%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-.close {
-  position: absolute;
-  right: 15px;
-  top: 5px;
-  cursor: pointer;
-  font-size: 25px;
-}
 `
 
 const MenuModal = styled.img`
