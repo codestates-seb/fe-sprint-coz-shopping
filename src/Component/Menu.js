@@ -33,40 +33,48 @@ const MenuBackground = styled.div`
     width: 100vw;
     height: 100vh;
     font-size: 14px;
-    z-index: 10;
+    z-index: 100;
 `
 
 const MenuModal = styled.img`
     position: absolute;
     width: 200px;
     height: 172px;
-    top: 2.6rem;
+    top: 2.9rem;
     right: 2rem;
 `
 
 const MenuUser = styled.div `
     position: absolute;
-    top: 5.1rem;
+    top: 5.4rem;
     right: 5rem;
 `
 
 const MenuSection = styled.div`
-    width: 230px;
-    height: 60px;
+    width: 186px;
+    height: 46px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(239, 239, 239);
+    }
 `
 
 const MenuProductList = styled(MenuSection)`
     position: absolute;
-    top: 6.6rem;
-    right: -2rem;
+    top: 7.3467rem;
+    right: 2.43rem;
 `
 
 const MenuBookmark = styled(MenuSection)`
     position: absolute;
-    top: 9.5rem;
-    right: -2rem;
+    top: 10.253rem;
+    right: 2.4rem;
+    border-radius: 0 0 10px 10px;
+    padding-right: 25px;
+    box-sizing: border-box;
 `
 
 const MenuIcon = styled.img`
