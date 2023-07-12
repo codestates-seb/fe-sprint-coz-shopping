@@ -1,0 +1,9 @@
+.footer_container{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: grey;
+  font-size: 12px;
+}
