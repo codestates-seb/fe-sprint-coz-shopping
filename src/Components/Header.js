@@ -164,7 +164,7 @@ const Header = () => {
                     </div>
                   </li>
                 </Link>
-                <Link to={"/products/list"} style={{ textDecoration: "none" }}>
+                <Link to={"/bookmark"} style={{ textDecoration: "none" }}>
                   <li className="link_li">
                     <div className="li_icon">
                       <img src="/images/star.svg" alt=""></img>
