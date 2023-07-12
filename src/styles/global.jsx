@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --theme-fore: #000000;
     --theme-back: #ffffff;
-    --theme-highlight: ##412DD4;
+    --theme-highlight: #452CDD;
     --size-half: 5px;
     --size-base: 10px;
     --font-family-base: 'Noto Sans KR', 'sans-serif';
@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     --font-size-title: 32px;
     --font-weight-normal: 400;
     --font-weight-bold: 700;
+    --font-weight-extrabold:800;
   }
 
   @media (prefers-color-scheme: dark) {

@@ -1,5 +1,5 @@
 function Main() {
-  return <p>test</p>;
+  return <p>hi</p>;
 }
 
 export default Main;
