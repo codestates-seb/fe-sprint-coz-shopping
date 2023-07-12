@@ -1,6 +1,6 @@
 
 import "./Header.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Header() {
 
@@ -22,6 +22,21 @@ export default function Header() {
         setDropdownVisible(!dropdownVisible);
     };
 
+    const dropdownRef = useRef(null);
+
+    const handleClickOutside = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownVisible(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
 
     return (
         <div>
@@ -30,8 +45,7 @@ export default function Header() {
                 <span id="cozname" onClick={handleLogoClick}>COZ Shopping</span>
                 <img className="hamburger" src="/hamburger.png" alt="hamburger button" onClick={handleHamburgerClick}></img>
                 {dropdownVisible && (
-                    <div>
-                        
+                    <div ref={dropdownRef}>
                         <div id="dropdown_box">
                         <img id="polygon" src="/Polygon.png" alt="" ></img>
                             <div className="dropdown-menu">OOO님, 안녕하세요!</div>
