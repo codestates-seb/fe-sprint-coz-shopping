@@ -1,0 +1,67 @@
+.footer{
+
+    display: flex;
+
+    align-items: center; 
+    justify-content: center; 
+
+    flex-direction: column;
+    
+    position: fixed;
+    
+    width: 100%;
+    height: 58px;
+    padding: 0 76px;
+    bottom: 0;
+    
+    background-color: #FFFFFF;
+    box-shadow: 12px 0px 12px 0px rgba(0, 0, 0, 0.1);
+
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    }
+
+
+
+/* All rights reserved @ Codestates */
+
+#footext2{
+
+height:18px;
+
+font-family: 'Inter';    align-items: flex-start;
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 88.02%;
+/* or 11px */
+
+display: flex;
+align-items: center; 
+justify-content: center; 
+
+color: #888888;
+
+}
+
+#footext1 {
+
+/* 개인정보 처리방침 | 이용 약관 */
+
+
+height:18px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 88.02%;
+/* or 11px */
+
+display: flex;
+align-items: center; 
+justify-content: center; 
+
+color: #888888;
+
+}
