@@ -1,8 +1,8 @@
 # fe-sprint-coz-shopping
-###Title : 
+Title : 
     - e-commerce 사이트의 부분적인 기능
 
-###구현될 기능 
+구현될 기능 
     
     - 메인페이지에서 router사용하여 페이지 이동
     
@@ -14,13 +14,13 @@
 
     - Modal 창
 
-###실행 명렁어
+실행 명렁어
 
     - npm install 
 
     - npm start
 
-### 상세한 기능 설명
+상세한 기능 설명
 
     Main Page : path -> /
     
