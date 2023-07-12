@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import './header.css';
 import logo from '../img/logo.png';
 import menu from '../img/ion_menu.png';
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   const [navOpen, setNavOpen] = useState(false);
