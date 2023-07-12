@@ -15,8 +15,8 @@ const Div = styled.div`
 `;
 
 function App() {
-  const AllProducts = useSelector((state) => state.AllProducts);
-  const isLoding = useSelector((state) => state.Loding);
+  const AllProducts = useSelector((state) => state.AllProducts.value);
+  const isLoding = useSelector((state) => state.Loding.value);
   const dispatch = useDispatch();
 
   useEffect(() => {

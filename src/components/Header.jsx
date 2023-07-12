@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import HeaderTab from "./HeaderTab";
+
 const HeaderContainer = styled.header`
   display: flex;
   text-align: center;
@@ -9,7 +10,7 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   width: 100%;
   height: 80px;
-  position: absolute;
+  position: fixed;
   box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
 `;
 
@@ -46,9 +47,9 @@ export default function Header() {
             <path
               d="M2 22H32M2 12H32M2 2H32"
               stroke="black"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
           {isOn ? <HeaderTab /> : null}
