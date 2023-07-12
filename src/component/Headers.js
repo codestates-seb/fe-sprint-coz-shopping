@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // 헤더
 const Header = styled.header`
-    position:relative;
+    position:sticky;
     .headerWhap{ 
         background: #FFF;
         box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.10);
@@ -17,9 +18,12 @@ const Header = styled.header`
             margin-left:76px;
             display:flex;
             align-items: center;
-            > .leftImg {
-                width:55px;
-                height:30px;
+            > .leftLink {
+                > .leftImg {
+                    width:55px;
+                    height:30px;
+                    cursor: pointer;
+                }
             }
             > .leftText {
                 margin-left:12px;
@@ -27,6 +31,7 @@ const Header = styled.header`
                 font-size:32px;
                 line-height:28.17px;
             }
+            
         }
         > .headerRight { 
             margin-right:110px;
@@ -58,27 +63,37 @@ const Header = styled.header`
             width: 200px;
             height: 150px;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             flex-shrink: 0;
             border-radius:12px;
             background: #FFF;
             box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.10);
-            > .modalText {
+            
+            > .greetingMessage {
                 display:flex;
                 align-items: center;
-                width:200px;
                 height:50px;
-                padding-left:12px;
-                cursor: pointer;
-                box-sizing:border-box;
-                > .modalArrow {
-                    width:20px;
-                    height:20px;
-                    margin-right:8px;
-                }
-                > span {
-                    font-weight : 400;
-                    font-size:16px;
+            }
+            > .pageConversion{
+                text-decoration:none;
+                > .modalText {
+                    display:flex;
+                    align-items: center;
+                    width:200px;
+                    height:50px;
+                    padding-left:20px;
+                    cursor: pointer;
+                    box-sizing:border-box;
+                    > .modalArrow {
+                        width:20px;
+                        height:20px;
+                        margin-right:8px;
+                    }
+                    > span {
+                        font-weight : 400;
+                        font-size:16px;
+                        color:black;
+                    }
                 }
             }
             > div:first-child {
@@ -107,8 +122,11 @@ const Headers = () => {
             <Header>
                 <div className="headerWhap">
                     <div className="headerLeft">
-                        <img className="leftImg" src="/images/logo.png" alt="코드스테이츠 로고" />
+                        <Link to="/" className="leftLink">
+                            <img className="leftImg" src="/images/logo.png" alt="코드스테이츠 로고" />
+                        </Link>
                         <h1 className="leftText">COZ Shopping</h1>
+
                     </div>
                     <div className="headerRight" onClick={menuClick}>
                         <img className="rightImg" src="/images/unnamed.png" alt="메뉴 버튼" />
@@ -116,25 +134,32 @@ const Headers = () => {
                 </div>
 
                 {/* 모달 */}
+                {/* 메뉴바 클릭시 모달창 On/Off */}
                 {ModalOpen && (
                     <nav className="modal">
                         <div className="modalImg">
                             <img className="modalArrow" src="/images/polygon.png" alt="메뉴 버튼 오픈" />
                         </div>
                         <div className="modalWrap">
-                            <div className="modalText">
+                            <div className="greetingMessage">
                                 <span>OOO님, 안녕하세요!</span>
                             </div>
 
-                            <div className="modalText">
-                                <img className="modalArrow" src="/images/gift.png" alt="상품 리스트 페이지" />
-                                <span>상품리스트 페이지</span>
-                            </div>
+                            {/* 상품리스트 페이지 이동 */}
+                            <Link to="/ProductList" className="pageConversion">
+                                <div className="modalText">
+                                    <img className="modalArrow" src="/images/gift.png" alt="상품 리스트 페이지" />
+                                    <span>상품리스트 페이지</span>
+                                </div>
+                            </Link>
 
-                            <div className="modalText">
-                                <img className="modalArrow" src="/images/star.png" alt="북마크 페이지" />
-                                <span>북마크 페이지</span>
-                            </div>
+                            {/* 북마크 페이지 이동 */}
+                            <Link to="/Bookmark" className="pageConversion">
+                                <div className="modalText">
+                                    <img className="modalArrow" src="/images/star.png" alt="북마크 페이지" />
+                                    <span>북마크 페이지</span>
+                                </div>
+                            </Link>
                         </div>
                     </nav>
                 )}
