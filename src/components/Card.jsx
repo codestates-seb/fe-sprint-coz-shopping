@@ -5,6 +5,7 @@ import {
   EnqueueNotifications,
   DequeueNotifications,
 } from "../features/Notifications";
+import { updateModal } from "../features/Modal";
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
@@ -73,7 +74,20 @@ export default function Card({ item }) {
       {item.type === "Product" ? (
         <div style={{ width: "264px", height: "264px" }}>
           <ImgBox>
-            <Img src={item.image_url} alt={item.title + "이미지"} />
+            <Img
+              src={item.image_url}
+              alt={item.title + "이미지"}
+              onClick={() =>
+                dispatch(
+                  updateModal({
+                    img: item.image_url,
+                    title: item.title,
+                    bookmark: item.bookmark,
+                    id: item.id,
+                  })
+                )
+              }
+            />
             {item.bookmark ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +140,20 @@ export default function Card({ item }) {
       ) : item.type === "Category" ? (
         <div style={{ width: "264px", height: "264px" }}>
           <ImgBox>
-            <Img src={item.image_url} alt={item.title + "이미지"} />
+            <Img
+              src={item.image_url}
+              alt={item.title + "이미지"}
+              onClick={() =>
+                dispatch(
+                  updateModal({
+                    img: item.image_url,
+                    title: item.title,
+                    bookmark: item.bookmark,
+                    id: item.id,
+                  })
+                )
+              }
+            />
             {item.bookmark ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -173,7 +200,20 @@ export default function Card({ item }) {
       ) : item.type === "Exhibition" ? (
         <div style={{ width: "264px", height: "264px" }}>
           <ImgBox>
-            <Img src={item.image_url} alt={item.title + "이미지"} />
+            <Img
+              src={item.image_url}
+              alt={item.title + "이미지"}
+              onClick={() =>
+                dispatch(
+                  updateModal({
+                    img: item.image_url,
+                    title: item.title,
+                    bookmark: item.bookmark,
+                    id: item.id,
+                  })
+                )
+              }
+            />
             {item.bookmark ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -224,7 +264,20 @@ export default function Card({ item }) {
       ) : item.type === "Brand" ? (
         <div style={{ width: "264px", height: "264px" }}>
           <ImgBox>
-            <Img src={item.brand_image_url} alt={item.brand_name + "이미지"} />
+            <Img
+              src={item.brand_image_url}
+              alt={item.brand_name + "이미지"}
+              onClick={() =>
+                dispatch(
+                  updateModal({
+                    img: item.brand_image_url,
+                    title: item.brand_name,
+                    bookmark: item.bookmark,
+                    id: item.id,
+                  })
+                )
+              }
+            />
             {item.bookmark ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"

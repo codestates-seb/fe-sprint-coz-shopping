@@ -10,11 +10,9 @@ export const NotificationsSlice = createSlice({
   reducers: {
     EnqueueNotifications: (state, action) => {
       state.value = [...state.value, action.payload];
-      console.log(state.value);
     },
     DequeueNotifications: (state) => {
       state.value = state.value.slice(1);
-      console.log(state.value);
     },
   },
 });
