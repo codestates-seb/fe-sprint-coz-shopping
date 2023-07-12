@@ -10,7 +10,6 @@ export const LodingSlice = createSlice({
   reducers: {
     updateLoding: (state, action) => {
       state.value = action.payload;
-      console.log(action.payload);
     },
   },
 });

@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NotificationsCenter from "./components/NotificationsCenter";
+import Modal from "./components/Modal";
 const Div = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,6 +18,7 @@ const Div = styled.div`
 
 function App() {
   const isLoding = useSelector((state) => state.Loding.value);
+  const isModal = useSelector((state) => state.Modal.value);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -31,6 +33,7 @@ function App() {
   return (
     <BrowserRouter>
       <Div className="App">
+        {isModal ? <Modal /> : null}
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
