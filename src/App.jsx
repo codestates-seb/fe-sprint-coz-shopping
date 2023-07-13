@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
-import BookmarkPage from "./pages/BookmarkPage";
-import ProductListPage from "./pages/ProductListPage";
-import MainPage from "./pages/MainPage";
+import BookmarkPage from "./Pages/BookmarkPage";
+import ProductListPage from "./Pages/ProductListPage";
+import MainPage from "./Pages/MainPage";
 
 function App() {
   return (
