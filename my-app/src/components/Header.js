@@ -14,22 +14,25 @@ export default function Header() {
     <Router>
         <header className="header-container">
             <Link to ='/'>
-            <div className="logo-container">
-                <div className="logo-img">
-                    <img src="logo.png" alt="logo" /> 
+                <div className="logo-container">
+                    <div className="logo-img">
+                        <img src="logo.png" alt="logo" /> 
+                    </div>
+                    <span className="logo-title">COZ Shopping</span>
                 </div>
-                <span className="logo-title">COZ Shopping</span>
-            </div>
             </Link>
-            <img src="icon.png" alt="hamburger menu" onClick={dropdownHandler}/>
+            <img src="icon.png" alt="hamburger menu" className="dropdown-icon" onClick={dropdownHandler}/>
             {isDropdown && (
-                <div className="dropdown-menu">
-                    {<ul>
-                        <li>ooo님, 안녕하세요!</li>
-                        <li><img src='product.png' alt='icon'/> 상품리스트 페이지</li>
-                        <li><img src='bookmark.png' alt='icon'/> 북마크 페이지</li>
-                    </ul>
-                    }
+                <div className="dropdown">
+                    <div className="triangle"></div>
+                    <div className="dropdown-menu">
+                        {<ul>
+                            <li>ooo님, 안녕하세요!</li>
+                            <li><Link to='/product'><img src='product.png' alt='icon'/>상품리스트 페이지</Link></li>
+                            <li><Link to='/bookmark'><img src='bookmark.png' alt='icon'/>북마크 페이지</Link></li>
+                        </ul>
+                        }
+                    </div>
                 </div>
             )}
         </header>
