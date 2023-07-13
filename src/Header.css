@@ -7,10 +7,21 @@
     box-shadow: 5px 5px 5px  gray;
     max-width: 1280px;
     height: 80px;
+    /* 일반적인 문서 흐름에 따라 배치하면서, 
+    해당 요소의 위치를 상대적으로 조정 */
+    position: relative;
 }
 
 .header_font{
     padding-left: 12px;
     font-size: 32px;
     font-weight: 700;
+}
+
+.header_logo:hover {
+    cursor: pointer;
+}
+
+.header_icon:hover {
+    cursor: pointer;
 }
