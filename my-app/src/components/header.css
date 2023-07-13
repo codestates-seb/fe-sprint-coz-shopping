@@ -34,7 +34,7 @@ div.logo-img {
 }
 
 /* dropdown css */
-.dropdown {
+.dropdown-container {
     /* display: none; */
     position: absolute;
     top: 52px;
@@ -80,7 +80,15 @@ div.logo-img {
     }
 }
 
-
+.dropdown-menu li:first-child {
+    display: flex;
+    justify-content: center;
+}
 .dropdown-menu li img {
     margin-right: 8px;
+}
+
+.dropdown-list {
+    display: flex;
+    align-items: center;
 }

@@ -23,13 +23,23 @@ export default function Header() {
             </Link>
             <img src="icon.png" alt="hamburger menu" className="dropdown-icon" onClick={dropdownHandler}/>
             {isDropdown && (
-                <div className="dropdown">
+                <div className="dropdown-container">
                     <div className="triangle"></div>
                     <div className="dropdown-menu">
                         {<ul>
                             <li>ooo님, 안녕하세요!</li>
-                            <li><Link to='/product'><img src='product.png' alt='icon'/>상품리스트 페이지</Link></li>
-                            <li><Link to='/bookmark'><img src='bookmark.png' alt='icon'/>북마크 페이지</Link></li>
+                            <li>
+                                <Link to='/product'>
+                                    <div className="dropdown-list">
+                                    <img src='product.png' alt='icon'/>상품리스트 페이지</div>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='/bookmark'>
+                                <div className="dropdown-list">
+                                    <img src='bookmark.png' alt='icon'/>북마크 페이지</div>
+                                </Link>
+                            </li>
                         </ul>
                         }
                     </div>
