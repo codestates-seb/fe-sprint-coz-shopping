@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from "./router/Main";
-import Products from "./router/Products";
-import Bookmark from "./router/Bookmark";
+import Main from "./pages/Main";
+import Products from "./pages/Products";
+import Bookmark from "./pages/Bookmark";
 import { useSelector, useDispatch } from "react-redux";
 import { updateAllProducts } from "./features/AllProductsSlice";
 import { updateLoding } from "./features/Loding";

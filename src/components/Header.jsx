@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import HeaderTab from "./HeaderTab";
-
+import { updateCurPage } from "../features/CurFilter";
+import { useDispatch } from "react-redux";
 const HeaderContainer = styled.header`
   display: flex;
   text-align: center;
@@ -17,10 +18,15 @@ const HeaderContainer = styled.header`
 
 export default function Header() {
   const [isOn, setisOn] = useState(false);
+  const dispatch = useDispatch();
   return (
     <div style={{ width: "100%", height: 80 }}>
       <HeaderContainer>
-        <Link to={"/"} style={{ textDecoration: "none", color: "inherit" }}>
+        <Link
+          to={"/"}
+          style={{ textDecoration: "none", color: "inherit" }}
+          onClick={() => dispatch(updateCurPage("Main"))}
+        >
           <div style={{ display: "flex", marginLeft: 76 }}>
             <img
               src="/logo.png"

@@ -9,8 +9,9 @@ export const AllProductsSlice = createSlice({
   initialState,
   reducers: {
     updateAllProducts: (state, action) => {
-      const result = action.payload.map((el) => (el.bookmark = false));
+      action.payload.map((el) => (el.bookmark = false));
       state.value = action.payload;
+      console.log(state.value);
     },
     updateBookmark: (state, action) => {
       const idx = state.value.findIndex((el) => el.id === action.payload);
