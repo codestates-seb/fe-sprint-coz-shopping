@@ -5,6 +5,10 @@ import GoodsIcon from '../images/상품 아이콘.png';
 import "./Header.css";
 import { useState } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+
+
+
+
 export default function Header() {
     const [isDropdown, setisDropdown] = useState(false);
 
@@ -26,8 +30,8 @@ export default function Header() {
                 <div className="dropdown-menu">
                     {<ul>
                         <li>ooo님, 안녕하세요!</li>
-                        <li><img src={GoodsIcon} alt="logo" />상품리스트 페이지</li>
-                        <li><img src={BookIcon} alt="logo" />북마크 페이지</li>
+                        <li><img src={GoodsIcon} alt="logo" /><Link to = "">상품리스트 페이지</Link></li>
+                        <li><img src={BookIcon} alt="logo" /><Link to = "">북마크 페이지</Link></li>
                     </ul>}
                 </div>
             )}
