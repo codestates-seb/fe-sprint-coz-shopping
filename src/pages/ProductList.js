@@ -3,7 +3,8 @@ import Footer from "../components/Footer";
 import Toast from "../components/Toast";
 import DetailProduct from "../components/DetailProduct";
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Container = styled.div`
   height: 100vh;
@@ -33,29 +34,31 @@ const P = styled.p`
   text-align: center;
 `;
 
-function ProductList({
-  bookMark,
-  setBookMark,
-  message,
-  setMessage,
-  products,
-  ids,
-  setIds,
-}) {
-  const [filtered, setFiltered] = useState(products);
+function ProductList({ bookMark, setBookMark, message, setMessage }) {
+  const [list, setList] = useState([]);
+  const [filtered, setFiltered] = useState([]);
   const [toastState, setToastState] = useState(false);
 
   function checkInputValues2() {
-    setToastState(true);
+    setToastState(!toastState);
   }
+
+  useEffect(() => {
+    axios
+      .get("http://cozshopping.codestates-seb.link/api/v1/products")
+      .then((res) => {
+        setList(res.data);
+        setFiltered(res.data);
+      });
+  }, []);
 
   const clickHandler = (type) => {
     if (type === "all") {
-      setFiltered(products);
+      setFiltered(list);
       return;
     }
     setFiltered(
-      products.filter((elem) => {
+      list.filter((elem) => {
         return elem.type === type;
       })
     );
@@ -70,19 +73,19 @@ function ProductList({
           <P>전체</P>
         </ImageContainer>
         <ImageContainer onClick={() => clickHandler("Product")}>
-          <img src="/product.png" alt="product" />
+          <img src="/product.png" alt="all" />
           <P>상품</P>
         </ImageContainer>
         <ImageContainer onClick={() => clickHandler("Category")}>
-          <img src="/category.png" alt="category" />
+          <img src="/category.png" alt="all" />
           <P>카테고리</P>
         </ImageContainer>
         <ImageContainer onClick={() => clickHandler("Exhibition")}>
-          <img src="/exhibition.png" alt="exhibition" />
+          <img src="/exhibition.png" alt="all" />
           <P>기획전</P>
         </ImageContainer>
         <ImageContainer onClick={() => clickHandler("Brand")}>
-          <img src="/brand.png" alt="brand" />
+          <img src="/brand.png" alt="all" />
           <P>브랜드</P>
         </ImageContainer>
       </TypeDiv>
@@ -90,8 +93,6 @@ function ProductList({
         {filtered.map((elem) => {
           return (
             <DetailProduct
-              ids={ids}
-              setIds={setIds}
               elem={elem}
               key={elem.id}
               bookMark={bookMark}
@@ -105,7 +106,7 @@ function ProductList({
       </Products>
       <Footer />
       {toastState === true ? (
-        <Toast setToastState={setToastState} msg={message} />
+        <Toast setToastState={setToastState} msg="북마크에 추가되었습니다." />
       ) : null}
     </Container>
   );

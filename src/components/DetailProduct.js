@@ -67,10 +67,7 @@ function DetailProduct({
   stars,
   checkInputValues,
   checkInputValues2,
-  checkInputValues3,
   setMessage,
-  ids,
-  setIds,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [first, setFirst] = useState("");
@@ -78,48 +75,37 @@ function DetailProduct({
   const [third, setThird] = useState("");
   const [star, setStar] = useState(false);
 
-  const clickHandler = () => {
+  const clickHandler = (event) => {
     setIsOpen(!isOpen);
   };
 
-  const bookMarkClickHandler = () => {
+  const bookMarkClickHandler = (event) => {
     if (star === false) {
       setStar(true);
       setBookMark([...bookMark, elem]);
       setMessage("북마크에 추가되었습니다.");
       if (checkInputValues) {
         checkInputValues();
-      } else if (checkInputValues2) {
-        checkInputValues2();
       } else {
-        checkInputValues3();
+        checkInputValues2();
       }
-      // 아이디 기억
-      setIds([...ids, elem.id]);
     } else {
       setStar(false);
       if (checkInputValues) {
         checkInputValues();
-      } else if (checkInputValues2) {
-        checkInputValues2();
       } else {
-        checkInputValues3();
+        checkInputValues2();
       }
       setMessage("북마크에서 삭제되었습니다.");
       const filtered = bookMark.filter((original) => {
         return original !== elem;
       });
       setBookMark(filtered);
-      setIds(
-        ids.filter((x) => {
-          return x !== elem.id;
-        })
-      );
     }
   };
 
   useEffect(() => {
-    if (stars || ids.includes(elem.id)) {
+    if (stars) {
       setStar(true);
     }
     switch (elem.type) {

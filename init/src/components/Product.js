@@ -1,7 +1,5 @@
 import DetailProduct from "./DetailProduct";
-import { useEffect, useState } from "react";
 import styled from "styled-components";
-import axios from "axios";
 
 const ProdContainer = styled.div`
   width: 100%;
@@ -10,30 +8,48 @@ const ProdContainer = styled.div`
   align-items: center;
 `;
 
-function Product({ bookMark, setBookMark, checkInputValues }) {
-  const [prodList, setProdList] = useState([]);
-  useEffect(() => {
-    axios
-      .get("http://cozshopping.codestates-seb.link/api/v1/products?count=4")
-      .then((res) => {
-        setProdList(res.data);
-      });
-  }, []);
-
+function Product({
+  bookMark,
+  setBookMark,
+  checkInputValues,
+  setMessage,
+  products,
+  booked,
+  ids,
+  setIds,
+}) {
   return (
     <>
       <ProdContainer>
-        {prodList.map((elem) => {
-          return (
-            <DetailProduct
-              key={elem.id}
-              elem={elem}
-              bookMark={bookMark}
-              setBookMark={setBookMark}
-              checkInputValues={checkInputValues}
-            />
-          );
-        })}
+        {!booked
+          ? products.slice(0, 4).map((elem) => {
+              return (
+                <DetailProduct
+                  ids={ids}
+                  setIds={setIds}
+                  key={elem.id}
+                  elem={elem}
+                  bookMark={bookMark}
+                  setBookMark={setBookMark}
+                  checkInputValues={checkInputValues}
+                  setMessage={setMessage}
+                />
+              );
+            })
+          : bookMark.slice(0, 4).map((elem) => {
+              return (
+                <DetailProduct
+                  ids={ids}
+                  setIds={setIds}
+                  key={elem.id}
+                  elem={elem}
+                  bookMark={bookMark}
+                  setBookMark={setBookMark}
+                  checkInputValues={checkInputValues}
+                  setMessage={setMessage}
+                />
+              );
+            })}
       </ProdContainer>
     </>
   );

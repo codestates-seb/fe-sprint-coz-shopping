@@ -1,9 +1,9 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styled from "styled-components";
+import Toast from "../components/Toast";
 import DetailProduct from "../components/DetailProduct";
 import { useState, useEffect } from "react";
-import axios from "axios";
 
 const Container = styled.div`
   height: 100vh;
@@ -32,12 +32,12 @@ const P = styled.p`
   text-align: center;
 `;
 
-function Bookmark({ bookMark, setBookMark }) {
+function Bookmark({ bookMark, setBookMark, setMessage, message, ids, setIds }) {
   const [list, setList] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [empty, setEmpty] = useState(false);
   const [stars, setStars] = useState(false);
-  const [type, setType] = useState("");
+  const [toastState, setToastState] = useState(false);
 
   const clickHandler = (type) => {
     if (type === "all") {
@@ -50,6 +50,10 @@ function Bookmark({ bookMark, setBookMark }) {
       })
     );
   };
+
+  function checkInputValues3() {
+    setToastState(true);
+  }
 
   useEffect(() => {
     setStars(true);
@@ -91,17 +95,25 @@ function Bookmark({ bookMark, setBookMark }) {
           filtered.map((elem) => {
             return (
               <DetailProduct
+                ids={ids}
+                setIds={setIds}
                 elem={elem}
                 key={elem.id}
                 bookMark={bookMark}
                 setBookMark={setBookMark}
                 stars={stars}
                 setStars={setStars}
+                setMessage={setMessage}
+                checkInputValues3={checkInputValues3}
+                setToastState={setToastState}
               ></DetailProduct>
             );
           })}
       </Products>
       <Footer />
+      {toastState === true ? (
+        <Toast setToastState={setToastState} msg={message} />
+      ) : null}
     </Container>
   );
 }

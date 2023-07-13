@@ -1,17 +1,12 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Toast from "../components/Toast";
-import DetailProduct from "../components/DetailProduct";
 import styled from "styled-components";
-import { useState } from "react";
+import DetailProduct from "../components/DetailProduct";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Container = styled.div`
   height: 100vh;
-`;
-
-const Products = styled.div`
-  display: flex;
-  flex-wrap: wrap;
 `;
 
 const ImageContainer = styled.div`
@@ -21,6 +16,10 @@ const ImageContainer = styled.div`
   cursor: pointer;
 `;
 
+const Products = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 const TypeDiv = styled.div`
   display: flex;
   align-items: center;
@@ -33,33 +32,33 @@ const P = styled.p`
   text-align: center;
 `;
 
-function ProductList({
-  bookMark,
-  setBookMark,
-  message,
-  setMessage,
-  products,
-  ids,
-  setIds,
-}) {
-  const [filtered, setFiltered] = useState(products);
-  const [toastState, setToastState] = useState(false);
-
-  function checkInputValues2() {
-    setToastState(true);
-  }
+function Bookmark({ bookMark, setBookMark }) {
+  const [list, setList] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [empty, setEmpty] = useState(false);
+  const [stars, setStars] = useState(false);
 
   const clickHandler = (type) => {
     if (type === "all") {
-      setFiltered(products);
+      setFiltered(list);
       return;
     }
     setFiltered(
-      products.filter((elem) => {
+      list.filter((elem) => {
         return elem.type === type;
       })
     );
   };
+
+  useEffect(() => {
+    setStars(true);
+    if (bookMark.length === 0) {
+      setEmpty(true);
+    } else {
+      setList(bookMark);
+      setFiltered(bookMark);
+    }
+  }, [bookMark]);
 
   return (
     <Container>
@@ -70,45 +69,40 @@ function ProductList({
           <P>전체</P>
         </ImageContainer>
         <ImageContainer onClick={() => clickHandler("Product")}>
-          <img src="/product.png" alt="product" />
+          <img src="/product.png" alt="all" />
           <P>상품</P>
         </ImageContainer>
         <ImageContainer onClick={() => clickHandler("Category")}>
-          <img src="/category.png" alt="category" />
+          <img src="/category.png" alt="all" />
           <P>카테고리</P>
         </ImageContainer>
         <ImageContainer onClick={() => clickHandler("Exhibition")}>
-          <img src="/exhibition.png" alt="exhibition" />
+          <img src="/exhibition.png" alt="all" />
           <P>기획전</P>
         </ImageContainer>
         <ImageContainer onClick={() => clickHandler("Brand")}>
-          <img src="/brand.png" alt="brand" />
+          <img src="/brand.png" alt="all" />
           <P>브랜드</P>
         </ImageContainer>
       </TypeDiv>
       <Products>
-        {filtered.map((elem) => {
-          return (
-            <DetailProduct
-              ids={ids}
-              setIds={setIds}
-              elem={elem}
-              key={elem.id}
-              bookMark={bookMark}
-              setBookMark={setBookMark}
-              setToastState={setToastState}
-              checkInputValues2={checkInputValues2}
-              setMessage={setMessage}
-            ></DetailProduct>
-          );
-        })}
+        {!empty &&
+          filtered.map((elem) => {
+            return (
+              <DetailProduct
+                elem={elem}
+                key={elem.id}
+                bookMark={bookMark}
+                setBookMark={setBookMark}
+                stars={stars}
+                setStars={setStars}
+              ></DetailProduct>
+            );
+          })}
       </Products>
       <Footer />
-      {toastState === true ? (
-        <Toast setToastState={setToastState} msg={message} />
-      ) : null}
     </Container>
   );
 }
 
-export default ProductList;
+export default Bookmark;

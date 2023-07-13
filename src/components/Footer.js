@@ -14,7 +14,6 @@ const SpanContainer = styled.div`
   padding-bottom: 6px;
   max-width: 2400px;
   height: 58px;
-  margin-top: 20px;
 `;
 
 function Footer() {

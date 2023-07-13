@@ -3,7 +3,7 @@ import Product from "../components/Product";
 import Footer from "../components/Footer";
 import styled from "styled-components";
 import Toast from "../components/Toast";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const ProdSpan = styled.span`
   font-size: 1.5rem;
@@ -22,29 +22,13 @@ const Container = styled.div`
   height: 100vh;
 `;
 
-function Main({
-  bookMark,
-  setBookMark,
-  message,
-  setMessage,
-  products,
-  ids,
-  setIds,
-}) {
+function Main({ bookMark, setBookMark, message, setMessage }) {
   const [toastState, setToastState] = useState(false);
-  const [booked, setBooked] = useState(false);
 
   function checkInputValues() {
     setToastState(true);
+    setMessage("북마크에 추가되었습니다.");
   }
-
-  useEffect(() => {
-    if (bookMark.length !== 0) {
-      setBooked(true);
-    } else {
-      setBooked(false);
-    }
-  }, [bookMark]);
 
   return (
     <Container>
@@ -56,25 +40,14 @@ function Main({
           setBookMark={setBookMark}
           checkInputValues={checkInputValues}
           setMessage={setMessage}
-          products={products}
-          ids={ids}
-          setIds={setIds}
         />
         <ProdSpan>북마크 리스트</ProdSpan>
-        {booked ? (
-          <Product
-            bookMark={bookMark}
-            booked={booked}
-            setBookMark={setBookMark}
-            checkInputValues={checkInputValues}
-            setMessage={setMessage}
-            products={products}
-            ids={ids}
-            setIds={setIds}
-          />
-        ) : (
-          "아직 북마크 하신게 없군요!"
-        )}
+        <Product
+          bookMark={bookMark}
+          setBookMark={setBookMark}
+          checkInputValues={checkInputValues}
+          setMessage={setMessage}
+        />
       </MainContainer>
       <Footer />
       {toastState === true ? (
