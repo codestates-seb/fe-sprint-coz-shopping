@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { updateCurPage } from "../features/CurFilter";
+import { useDispatch } from "react-redux";
 const Div = styled.div`
   width: 200px;
   height: 50px;
@@ -15,6 +17,7 @@ const Div = styled.div`
 `;
 
 export default function HeaderTab() {
+  const dispatch = useDispatch();
   return (
     <div
       style={{
@@ -51,6 +54,7 @@ export default function HeaderTab() {
         <Link
           to={"/products/list"}
           style={{ textDecoration: "none", color: "inherit" }}
+          onClick={() => dispatch(updateCurPage("Products"))}
         >
           <Div
             style={{
@@ -76,6 +80,7 @@ export default function HeaderTab() {
         <Link
           to={"/bookmark"}
           style={{ textDecoration: "none", color: "inherit" }}
+          onClick={() => dispatch(updateCurPage("Bookmark"))}
         >
           <Div>
             <svg

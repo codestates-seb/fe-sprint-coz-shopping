@@ -12,7 +12,6 @@ const Notification = styled.div`
   color: black;
   width: 305px;
   height: 52px;
-  padding: 18px 24px;
   margin: 12px;
   display: flex;
   justify-content: center;
