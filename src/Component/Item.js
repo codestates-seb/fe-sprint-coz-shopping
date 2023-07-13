@@ -1,13 +1,12 @@
+import BookmarkIcon from './BookmarkIcon';
 import styled from 'styled-components';
-import bookmarkOff from "../assets/bookmark-off.png";
-import bookmarkOn from "../assets/bookmark-on.png";
 
-export default function Item({ data }) {
+export default function Item({ data, bookmarkList, setBookmarkList }) {
     return (
         <ProductItemContainer>
             <ProductImgContainer>
                 <ProductImg src={data.type === "Brand" ? data.brand_image_url : data.image_url} />
-                <BookmarkStar src={bookmarkOff} />
+                <BookmarkIcon data={data} bookmarkList={bookmarkList} setBookmarkList={setBookmarkList} isBookmarked={bookmarkList.some(item => item.id === data.id)} />
             </ProductImgContainer>
             <div>
                 <ProductContent>
@@ -40,14 +39,6 @@ const ProductImg = styled.img`
     height: 13.125rem;
     border-radius: 12px;
     object-fit: cover;
-`
-
-const BookmarkStar = styled.img`
-    width: 1.8rem;
-    height: 1.8rem;
-    position: absolute;
-    bottom: 0.75rem;
-    right: 0.75rem;
 `
 
 const ProductContent = styled.div`
