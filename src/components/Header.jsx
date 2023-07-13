@@ -23,6 +23,7 @@ const HeaderContainer = styled.header`
     height: 30px;
     margin-left: 76px;
     margin-right: 12px;
+    filter: drop-shadow(0px 8px 8px 0px #0000001a);
   }
   .right {
     position: relative;

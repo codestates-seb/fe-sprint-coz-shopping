@@ -8,16 +8,22 @@ const DropdownBox = styled.div`
   border-radius: 12px;
   height: 150px;
   background-color: white;
-  top: 54px;
+  top: 41px;
   right: 32px;
+  box-shadow: 0px 8px 8px 0px #0000001a;
 
-  img {
+  /* FIXME : 그립자효과주기 */
+  .polygon {
+    filter: drop-shadow(0px 8px 8px 0px #0000001a);
     position: absolute;
     width: 16px;
     height: 18px;
-    top: -20px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: white;
+    top: -18px;
     right: 54px;
   }
+
   ul {
     width: 200px;
     height: 150px;
@@ -51,29 +57,27 @@ const DropdownBox = styled.div`
 
 function DropdownMenu() {
   return (
-    <DropdownBox>
-      <div className="dropdown_container">
-        <img src="./img/Polygon.png" alt="" />
-        <ul>
-          <li>
-            <span>애옹님, 안녕하세요!</span>
-          </li>
-          <li>
-            <span>
-              <Link className="link" to="/productlistpage">
-                상품리스트 페이지
-              </Link>
-            </span>
-          </li>
-          <li>
-            <span>
-              <Link className="link" to="/bookmarkpage">
-                북마크 페이지
-              </Link>
-            </span>
-          </li>
-        </ul>
-      </div>
+    <DropdownBox className="dropdown_container">
+      <div className="polygon"></div>
+      <ul>
+        <li>
+          <span>애옹님, 안녕하세요!</span>
+        </li>
+        <li>
+          <span>
+            <Link className="link" to="/productlistpage">
+              상품리스트 페이지
+            </Link>
+          </span>
+        </li>
+        <li>
+          <span>
+            <Link className="link" to="/bookmarkpage">
+              북마크 페이지
+            </Link>
+          </span>
+        </li>
+      </ul>
     </DropdownBox>
   );
 }
