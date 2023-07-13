@@ -39,7 +39,7 @@ const HeaderContainer = styled.header`
 
 //FIXME
 const openDropdownMenu = () => {
-  console.log("evnet");
+  console.log("evnetasda");
 };
 
 function Header() {
