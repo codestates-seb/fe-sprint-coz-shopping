@@ -6,17 +6,22 @@ import MainPage from "./Page/MainPage";
 import ProductListPage from "./Page/ProductListPage";
 import BookmarkPage from "./Page/BookmarkPage";
 import Footer from "./Component/Footer";
-import Menu from "./Component/Menu";
 
 function App() {
-  const [isMenu, setIsMenu] = useState(false);
+  const [mainProductList, setMainProductList] = useState([]);
   const [productList, setProductList] = useState([]);
   const [bookmarkList, setBookmarkList] = useState(() => {
     return JSON.parse(localStorage.getItem("bookmark")) || []
   });
 
-  function menuPopUp() {
-    setIsMenu(!isMenu);
+  async function getMainProductList() {
+    try {
+      const res = await axios
+        .get(`http://cozshopping.codestates-seb.link/api/v1/products?count=4`);
+      setMainProductList(res.data);
+    } catch (err) {
+      return console.log(err);
+    }
   }
 
   async function getProductList() {
@@ -31,15 +36,15 @@ function App() {
 
   useEffect(() => {
     getProductList();
+    getMainProductList();
   }, []);
 
   return (
     <BrowserRouter>
       <div>
-        { isMenu === true ? <Menu isMenu={isMenu} menuPopUp={menuPopUp} /> : null }
-        <Header menuPopUp={menuPopUp} />
+        <Header />
         <Routes>
-          <Route path="/" element={<MainPage productList={productList} bookmarkList={bookmarkList} setBookmarkList={setBookmarkList} />} />
+          <Route path="/" element={<MainPage mainProductList={mainProductList} bookmarkList={bookmarkList} setBookmarkList={setBookmarkList} />} />
           <Route path="/products/list" element={<ProductListPage productList={productList} />} />
           <Route path="/bookmark" element={<BookmarkPage productList={productList} />} />
         </Routes>

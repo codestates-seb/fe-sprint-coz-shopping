@@ -1,19 +1,30 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import Menu from './Menu';
 import logo from "../assets/logo.png";
 import hamburger from "../assets/icon.png";
-import styled from 'styled-components';
 
-export default function Header({ menuPopUp }) {
+export default function Header() {
+    const [isMenu, setIsMenu] = useState(false);
+
+    function menuPopUp() {
+        setIsMenu(!isMenu);
+    }
+
     return (
-        <HeaderBackground>
-            <HeaderLeft>
-                <RouterLink to="/"><HeaderLogo src={logo} /></RouterLink>
-                <RouterLink to="/"><HeaderTitle>COZ Shopping</HeaderTitle></RouterLink>
-            </HeaderLeft>
-            <HeaderRight>
-                <HeaderHamburger src={hamburger} onClick={ menuPopUp } />
-            </HeaderRight>
-        </HeaderBackground>
+        <>
+            { isMenu === true ? <Menu isMenu={isMenu} menuPopUp={menuPopUp} /> : null }
+            <HeaderBackground>
+                <HeaderLeft>
+                    <RouterLink to="/"><HeaderLogo src={logo} /></RouterLink>
+                    <RouterLink to="/"><HeaderTitle>COZ Shopping</HeaderTitle></RouterLink>
+                </HeaderLeft>
+                <HeaderRight>
+                    <HeaderHamburger src={hamburger} onClick={ menuPopUp } />
+                </HeaderRight>
+            </HeaderBackground>
+        </>
     );
 }
 

@@ -16,6 +16,6 @@ export default function BookmarkIcon({ data, bookmarkList, setBookmarkList, isBo
     }
 
     return (
-        <img src={isBookmarked ? bookmarkOn : bookmarkOff} onClick={(e) => handleBookmark(e, data)}/>
+        <img src={isBookmarked ? bookmarkOn : bookmarkOff} onClick={(e) => handleBookmark(e, data)} alt={data.type === "Category" ? `# ${data.title}` : data.type === "Brand" ? `${data.brand_name}` : `${data.title}`} />
     );
 }

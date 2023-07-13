@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import Item from '../Component/Item';
 
-export default function MainPage({ productList, bookmarkList, setBookmarkList, modalPopUp }) {
+export default function MainPage({ mainProductList, bookmarkList, setBookmarkList }) {
     return (
         <MainProductContainer>
             <MainProductSection>
                 <MainProductTitle>상품 리스트</MainProductTitle>
                 <MainProductItems>
-                    {productList.slice(0, 4).map((data) => <Item key={data.id} data={data} bookmarkList={bookmarkList} setBookmarkList={setBookmarkList} />)}
+                    {mainProductList.map((data) => <Item key={data.id} data={data} bookmarkList={bookmarkList} setBookmarkList={setBookmarkList} />)}
                 </MainProductItems>
             </MainProductSection>
             <MainProductSection>
