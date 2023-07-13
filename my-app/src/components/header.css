@@ -31,7 +31,8 @@ div.logo-img {
 
 .dropdown-menu {
     /* display: none; */
-    /* position: absolute; */
+    position: relative;
+
     display: flex;
     width: 200px;
     height: 150px;
@@ -39,6 +40,7 @@ div.logo-img {
     text-align: start;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.10);
     border-radius: 12px;
+    
 }
 
 .dropdown-menu li {
@@ -49,4 +51,9 @@ div.logo-img {
     font-weight: 400;
     width: 200px;
     height: 50px;
+    
+    &:hover {
+        background-color: #f1f1f1;
+        cursor: pointer;
+    }
 }
