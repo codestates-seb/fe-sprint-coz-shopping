@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function BookmarkList () {
+export default function ProductList () {
     return (
         <div>
             

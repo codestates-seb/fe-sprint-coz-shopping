@@ -1,19 +1,24 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
 import './App.css'
+import Header from "./Header";
+import Footer from "./Footer";
+import Main from "./Pages/Main";
+import ProductList from "./Pages/Productlist";
+import BookmarkList from "./Pages/Bookmarklist";
 
 function App() {
   return (
       <BrowserRouter>
-        <Header/>
-          <Routes>
-            <Route path="/"/>
-            <Route path="/products/list"/>
-            <Route path="/bookmark"/>
-          </Routes>
-        <Footer/>  
+        <div className="App">
+          <Header/>
+            <Routes>
+              <Route path="/" element={<Main/>}/>
+              <Route path="/products/list" element={<ProductList/>}/>
+              <Route path="/bookmark" element={<BookmarkList/>}/>
+            </Routes>
+          <Footer/>
+        </div>  
       </BrowserRouter>
   );
 }
