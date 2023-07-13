@@ -1,9 +1,10 @@
 import bookmarkOff from "../assets/bookmark-off.png";
 import bookmarkOn from "../assets/bookmark-on.png";
-import styled from 'styled-components';
 
-export default function BookmarkIcon({ data, bookmarkList, setBookmarkList, isBookmarked }) {
-    function handleBookmark(item) {
+export default function BookmarkIcon({ data, bookmarkList, setBookmarkList, isBookmarked}) {
+    function handleBookmark(e, item) {
+        e.stopPropagation();
+        
         if (bookmarkList.includes(item)) {
             const filteredData = bookmarkList.filter(el => el.id !== item.id);
             setBookmarkList(filteredData);
@@ -15,16 +16,6 @@ export default function BookmarkIcon({ data, bookmarkList, setBookmarkList, isBo
     }
 
     return (
-        <BookmarkStartIcon src={isBookmarked ? bookmarkOn : bookmarkOff} onClick={() => handleBookmark(data)}/>
+        <img src={isBookmarked ? bookmarkOn : bookmarkOff} onClick={(e) => handleBookmark(e, data)}/>
     );
 }
-
-
-// styled-components
-const BookmarkStartIcon = styled.img`
-    position: absolute;
-    width: 1.9rem;
-    height: 1.9rem;
-    right: 0.55rem;
-    bottom: 0.7rem;
-`

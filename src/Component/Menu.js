@@ -5,48 +5,31 @@ import bookmarkIcon from "../assets/boomark-icon.png";
 import styled from 'styled-components';
 
 export default function Menu({ menuPopUp }) {
+    function stopEvent(e) {
+        e.stopPropagation();
+    }
+
     return (
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> MainPage
         <MenuBackground onClick={menuPopUp}>
-            <MenuModal src={menu} />
-            <MenuUser>재연님 안녕하세요!</MenuUser>
-            <RouterLink to="/products/list">
-                <MenuProductList>
-                    <MenuIcon src={productListIcon}></MenuIcon>
-                    <MenuName className="menu__name">상품리스트 페이지</MenuName>
-                </MenuProductList>
-            </RouterLink>
-            <RouterLink to="/bookmark">
-                <MenuBookmark>
-                    <MenuIcon src={bookmarkIcon}></MenuIcon>
-                    <MenuName className="menu__name">북마크 페이지</MenuName>
-                </MenuBookmark>
-            </RouterLink>
-        </MenuBackground>
-<<<<<<< HEAD
-=======
-            <MenuBackground onClick={menuPopUp}>
+            <MenuBox onClick={(e) => stopEvent(e)}>
                 <MenuModal src={menu} />
-                <MenuUser>재연님 안녕하세요!</MenuUser>
-                <RouterLink to="/products/list">
-                    <MenuProductList>
-                        <MenuIcon src={productListIcon}></MenuIcon>
-                        <MenuName className="menu__name">상품리스트 페이지</MenuName>
-                    </MenuProductList>
-                </RouterLink>
-                <RouterLink to="/bookmark">
-                    <MenuBookmark>
-                        <MenuIcon src={bookmarkIcon}></MenuIcon>
-                        <MenuName className="menu__name">북마크 페이지</MenuName>
-                    </MenuBookmark>
-                </RouterLink>
-            </MenuBackground>
->>>>>>> MainPage
-=======
->>>>>>> MainPage
+                <MenuContents>
+                    <MenuUser>재연님 안녕하세요!</MenuUser>
+                    <RouterLink to="/products/list">
+                        <MenuProductList>
+                            <MenuIcon src={productListIcon}></MenuIcon>
+                            <MenuName className="menu__name">상품리스트 페이지</MenuName>
+                        </MenuProductList>
+                    </RouterLink>
+                    <RouterLink to="/bookmark">
+                        <MenuBookmark>
+                            <MenuIcon src={bookmarkIcon}></MenuIcon>
+                            <MenuName className="menu__name">북마크 페이지</MenuName>
+                        </MenuBookmark>
+                    </RouterLink>
+                </MenuContents>
+            </MenuBox>
+        </MenuBackground>
     )
 }
 
@@ -61,18 +44,25 @@ const MenuBackground = styled.div`
     z-index: 100;
 `
 
-const MenuModal = styled.img`
+const MenuBox = styled.div`
     position: absolute;
-    width: 200px;
-    height: 172px;
     top: 2.9rem;
     right: 2rem;
 `
 
-const MenuUser = styled.div `
+const MenuContents = styled.div`
     position: absolute;
-    top: 5.4rem;
-    right: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 1.6rem;
+    right: 0.45rem;
+`
+
+const MenuModal = styled.img`
+    width: 200px;
+    height: 172px;
 `
 
 const MenuSection = styled.div`
@@ -87,18 +77,23 @@ const MenuSection = styled.div`
     }
 `
 
+const MenuUser = styled(MenuSection)`
+    cursor: default;
+    &:hover{
+        background-color: transparent;
+    }
+`
+
 const MenuProductList = styled(MenuSection)`
-    position: absolute;
     top: 7.3467rem;
     right: 2.43rem;
 `
 
 const MenuBookmark = styled(MenuSection)`
-    position: absolute;
     top: 10.253rem;
     right: 2.4rem;
     border-radius: 0 0 10px 10px;
-    padding-right: 25px;
+    padding-right: 23px;
     box-sizing: border-box;
 `
 

@@ -23,7 +23,6 @@ function App() {
     try {
       const res = await axios
         .get(`http://cozshopping.codestates-seb.link/api/v1/products`);
-      console.log(res.data);
       setProductList(res.data);
     } catch (err) {
       return console.log(err);

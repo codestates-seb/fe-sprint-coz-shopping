@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Item from "../Component/Item";
+import Item from '../Component/Item';
 
-export default function MainPage({ productList, bookmarkList, setBookmarkList }) {
+export default function MainPage({ productList, bookmarkList, setBookmarkList, modalPopUp }) {
     return (
         <MainProductContainer>
             <MainProductSection>
