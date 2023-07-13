@@ -26,7 +26,7 @@ function Main({ bookMark, setBookMark }) {
   const [toastState, setToastState] = useState(false);
 
   function checkInputValues() {
-    setToastState(true);
+    setToastState(true); // hi
   }
 
   return (
