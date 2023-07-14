@@ -83,7 +83,7 @@ function Bookmark({ bookMark, setBookMark, setMessage, message, ids, setIds }) {
     );
   };
 
-  function checkInputValues3() {
+  function toastSet() {
     setToastState(true);
   }
 
@@ -137,7 +137,7 @@ function Bookmark({ bookMark, setBookMark, setMessage, message, ids, setIds }) {
                 stars={stars}
                 setStars={setStars}
                 setMessage={setMessage}
-                checkInputValues3={checkInputValues3}
+                toastSet={toastSet}
                 setToastState={setToastState}
               ></DetailProduct>
             );

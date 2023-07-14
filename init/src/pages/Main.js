@@ -34,7 +34,7 @@ function Main({
   const [toastState, setToastState] = useState(false);
   const [booked, setBooked] = useState(false);
 
-  function checkInputValues() {
+  function toastSetMain() {
     setToastState(true);
   }
 
@@ -54,7 +54,7 @@ function Main({
         <Product
           bookMark={bookMark}
           setBookMark={setBookMark}
-          checkInputValues={checkInputValues}
+          toastSetMain={toastSetMain}
           setMessage={setMessage}
           products={products}
           ids={ids}
@@ -66,7 +66,7 @@ function Main({
             bookMark={bookMark}
             booked={booked}
             setBookMark={setBookMark}
-            checkInputValues={checkInputValues}
+            toastSetMain={toastSetMain}
             setMessage={setMessage}
             products={products}
             ids={ids}

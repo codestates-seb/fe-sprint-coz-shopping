@@ -65,9 +65,9 @@ function DetailProduct({
   bookMark,
   setBookMark,
   stars,
-  checkInputValues,
-  checkInputValues2,
-  checkInputValues3,
+  toastSetMain,
+  toastSetProduct,
+  toastSet,
   setMessage,
   ids,
   setIds,
@@ -87,23 +87,23 @@ function DetailProduct({
       setStar(true);
       setBookMark([...bookMark, elem]);
       setMessage("북마크에 추가되었습니다.");
-      if (checkInputValues) {
-        checkInputValues();
-      } else if (checkInputValues2) {
-        checkInputValues2();
+      if (toastSetMain) {
+        toastSetMain();
+      } else if (toastSetProduct) {
+        toastSetProduct();
       } else {
-        checkInputValues3();
+        toastSet();
       }
       // 아이디 기억
       setIds([...ids, elem.id]);
     } else {
       setStar(false);
-      if (checkInputValues) {
-        checkInputValues();
-      } else if (checkInputValues2) {
-        checkInputValues2();
+      if (toastSetMain) {
+        toastSetMain();
+      } else if (toastSetProduct) {
+        toastSetProduct();
       } else {
-        checkInputValues3();
+        toastSet();
       }
       setMessage("북마크에서 삭제되었습니다.");
       const filtered = bookMark.filter((original) => {

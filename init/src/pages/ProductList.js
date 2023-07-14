@@ -77,7 +77,7 @@ function ProductList({
     });
   });
 
-  function checkInputValues2() {
+  function toastSetProduct() {
     setToastState(true);
   }
 
@@ -132,7 +132,7 @@ function ProductList({
                   bookMark={bookMark}
                   setBookMark={setBookMark}
                   setToastState={setToastState}
-                  checkInputValues2={checkInputValues2}
+                  toastSetProduct={toastSetProduct}
                   setMessage={setMessage}
                 ></DetailProduct>
               );
