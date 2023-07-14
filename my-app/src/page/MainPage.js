@@ -21,9 +21,9 @@ function Main() {
     <main className="main-container">
       <div>
         <p>상품 리스트</p>
-        <ul>
-          {listedData.slice(0,5).map(item => (
-            <li key={item.id}>
+        <ul className="shopping-item-wrap">
+          {listedData.filter(item=>(item.image_url)).slice(0,4).map(item => (
+            <li className="shopping-item-img" key={item.id}>
               <img src={item.image_url} alt={item.title} />
               {item.title}</li>
           ))}

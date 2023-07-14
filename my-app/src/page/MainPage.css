@@ -1,0 +1,10 @@
+.shopping-item-wrap {
+    display: flex;
+    
+}
+
+.shopping-item-img > img{
+
+    width: 150px;
+    border-radius: 10%;
+}

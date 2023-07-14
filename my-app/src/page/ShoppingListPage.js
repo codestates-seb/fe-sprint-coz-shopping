@@ -1,6 +1,6 @@
+import React from 'react';
 
-
-function ShoppingList() {
+function ShoppingListPage() {
 
 
     return (
@@ -10,4 +10,4 @@ function ShoppingList() {
     );
 }
 
-export default ShoppingList;
+export default ShoppingListPage;
