@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import styled from "styled-components";
 import Toast from "../components/Toast";
 import DetailProduct from "../components/DetailProduct";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Container = styled.div`
   height: 100vh;
@@ -34,10 +34,42 @@ const P = styled.p`
 
 function Bookmark({ bookMark, setBookMark, setMessage, message, ids, setIds }) {
   const [list, setList] = useState([]);
-  const [filtered, setFiltered] = useState([]);
+  const [filtered, setFiltered] = useState(bookMark);
   const [empty, setEmpty] = useState(false);
   const [stars, setStars] = useState(false);
   const [toastState, setToastState] = useState(false);
+  const [infinite, setInfinite] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const target = useRef(null);
+  const page = useRef(1);
+  const index = useRef(0);
+
+  useEffect(() => {
+    observer.observe(target.current); // observer를 등록하는건 동일
+  }, []);
+
+  useEffect(() => {
+    setInfinite([...filtered.slice(0, index.current + 10)]);
+  }, [filtered]);
+
+  function execute() {
+    setLoading(true);
+    if (index.current < filtered.length) {
+      setInfinite([...filtered.slice(0, index.current + 10)]);
+    }
+    index.current += 10;
+    setLoading(false);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      if (loading) return;
+      execute();
+      page.current += 1; // 이렇게 해줘야 page 숫자가 올라간다.
+    });
+  });
 
   const clickHandler = (type) => {
     if (type === "all") {
@@ -67,6 +99,7 @@ function Bookmark({ bookMark, setBookMark, setMessage, message, ids, setIds }) {
 
   return (
     <Container>
+      <div style={{ height: "100px", backgroundColor: "white" }}></div>
       <Header />
       <TypeDiv>
         <ImageContainer onClick={() => clickHandler("all")}>
@@ -92,7 +125,7 @@ function Bookmark({ bookMark, setBookMark, setMessage, message, ids, setIds }) {
       </TypeDiv>
       <Products>
         {!empty &&
-          filtered.map((elem) => {
+          infinite.map((elem) => {
             return (
               <DetailProduct
                 ids={ids}
@@ -114,6 +147,11 @@ function Bookmark({ bookMark, setBookMark, setMessage, message, ids, setIds }) {
       {toastState === true ? (
         <Toast setToastState={setToastState} msg={message} />
       ) : null}
+      <div
+        id="scrollEnd"
+        style={{ height: "20px", backgroundColor: "white" }}
+        ref={target}
+      ></div>
     </Container>
   );
 }
