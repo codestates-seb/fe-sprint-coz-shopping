@@ -11,7 +11,7 @@ const ProdContainer = styled.div`
 function Product({
   bookMark,
   setBookMark,
-  checkInputValues,
+  toastSetMain,
   setMessage,
   products,
   booked,
@@ -31,7 +31,7 @@ function Product({
                   elem={elem}
                   bookMark={bookMark}
                   setBookMark={setBookMark}
-                  checkInputValues={checkInputValues}
+                  toastSetMain={toastSetMain}
                   setMessage={setMessage}
                 />
               );
@@ -45,7 +45,7 @@ function Product({
                   elem={elem}
                   bookMark={bookMark}
                   setBookMark={setBookMark}
-                  checkInputValues={checkInputValues}
+                  toastSetMain={toastSetMain}
                   setMessage={setMessage}
                 />
               );

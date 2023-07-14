@@ -2,36 +2,16 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Toast from "../components/Toast";
 import DetailProduct from "../components/DetailProduct";
-import styled from "styled-components";
+import {
+  Container,
+  Products,
+  ImageContainer,
+  TypeDiv,
+  P,
+  UpDiv,
+  DownDiv,
+} from "./ProductStyle";
 import { useState, useEffect, useRef } from "react";
-
-const Container = styled.div`
-  height: 100vh;
-`;
-
-const Products = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const ImageContainer = styled.div`
-  margin-right: 23px;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-`;
-
-const TypeDiv = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-`;
-
-const P = styled.p`
-  font-size: 1rem;
-  text-align: center;
-`;
 
 function ProductList({
   bookMark,
@@ -95,7 +75,7 @@ function ProductList({
 
   return (
     <Container>
-      <div style={{ height: "100px", backgroundColor: "white" }}></div>
+      <UpDiv />
       <Header />
       <TypeDiv>
         <ImageContainer onClick={() => clickHandler("all")}>
@@ -144,11 +124,7 @@ function ProductList({
       {toastState === true ? (
         <Toast setToastState={setToastState} msg={message} />
       ) : null}
-      <div
-        id="scrollEnd"
-        style={{ height: "20px", backgroundColor: "white" }}
-        ref={target}
-      ></div>
+      <DownDiv ref={target}></DownDiv>
     </Container>
   );
 }
