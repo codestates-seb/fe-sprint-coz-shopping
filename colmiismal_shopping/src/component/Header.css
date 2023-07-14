@@ -15,20 +15,19 @@ position: fixed;
 top:0;
 
 width: 100%;
+min-width: 480px;
+
 height: 80px;
 padding: 0 76px;
 
 background-color: #FFFFFF;
 box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+
+z-index: 10;
+
 }
 
 #cozname{
-
-/* position: absolute;
-left: 11.17%;
-right: 70.86%;
-top: 31.48%;
-bottom: 31.48%; */
 
 font-family: 'Inter';
 font-style: normal;
@@ -44,24 +43,12 @@ cursor: pointer;
 
 .hamburger{
 
-/* position: absolute;
-width: 34px;
-height: 24px;
-left: 1170px;
-top: 28px; */
-
 margin-left: auto;
 cursor: pointer;
 
 }
 
 #cozlogo{
-
-/* position: absolute;
-left: 5.94%;
-right: 89.77%;
-top: 31.25%;
-bottom: 31.25%; */
 
 cursor: pointer;
 
@@ -76,7 +63,7 @@ cursor: pointer;
     top: 72px; 
     right: 52px; 
     filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
-    z-index: 10; /* Set as needed */
+    z-index: 11; /* Set as needed */
 
     flex: 1;
 
@@ -124,8 +111,6 @@ cursor: pointer;
 }
 
 #polygon {
-
-/* Polygon */
 
 position: absolute;
 left: 75%;

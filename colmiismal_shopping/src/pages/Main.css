@@ -1,6 +1,9 @@
 
 .mainin {
-    height: 100vh
+    height: 100vh;
+
+    position: relative;
+    z-index: 0;
 }
 
 #maininin {
@@ -12,12 +15,16 @@
 
     flex-direction: column;
 
+    z-index: 1;
+
 }
 
 .listmain {
     flex-grow: 1; 
     display: flex;
     flex-direction: column;
+
+    min-width: 1058px;
 
     font-family: 'Inter';
     font-style: normal;
@@ -32,7 +39,10 @@
     flex-direction: row;
     list-style-type: none; 
     flex-grow: 1; 
+    flex-wrap: wrap; 
     justify-content: space-between;
+
+    
 
     padding: 0px;
 
@@ -45,6 +55,7 @@
     display: flex;
 
     width: 264px;
+    height: 264px;
 
 }
 
@@ -58,6 +69,10 @@
     width: 24px;
     height: 24px;
 
+    cursor: pointer;
+
+    z-index: 5;
+
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
 }
 
@@ -70,12 +85,16 @@
 
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 12px;
+
+    z-index: 3;
+
+    cursor: pointer;
 }
 
-.firsttext {
+.brandtitle {
     position: absolute;
     left: 0px;
-    right: 50px;
+    right: 0px;
     top: 216px;
     bottom: 24px;
 
@@ -88,7 +107,7 @@
 
 }
 
-.secondtext {
+.pricetext {
     position: absolute;
     left: 0px;
     right: 2px;
@@ -105,9 +124,29 @@
 
 }
 
-.thirdtext {
+.subtitletext {
     position: absolute;
     left: 0px;
+    right: 2px;
+    top: 240px;
+    bottom: 0px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    text-align: left;
+
+    width: auto;
+    height: auto;
+
+}
+
+.purpletext {
+    position: absolute;
+    left: 187px;
     right: 2px;
     top: 216px;
     bottom: 24px;
@@ -122,4 +161,33 @@
 
     text-align: right;
 
+    width: auto;
+    height: auto;
+
+}
+
+.notpurpletext {
+    position: absolute;
+    left: 187px;
+    right: 2px;
+    top: 216px;
+    bottom: 24px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 19px;
+
+    text-align: right;
+
+    width: auto;
+    height: auto;
+
+}
+
+.bookmarkmodal {
+    position: absolute;
+    left: 24px;
+    bottom: 27px;
 }
