@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { LinkStyle } from "./HeaderStyle";
 
 const LiContainer = styled.div`
   z-index: 1;
@@ -27,15 +27,12 @@ function Dropdown() {
   return (
     <LiContainer>
       <Li>이용혁님 안녕하세요!</Li>
-      <Link
-        to="/products/list"
-        style={{ textDecoration: "none", color: "black" }}
-      >
+      <LinkStyle to="/products/list">
         <Li>상품리스트 페이지</Li>
-      </Link>
-      <Link to="/bookmark" style={{ textDecoration: "none", color: "black" }}>
+      </LinkStyle>
+      <LinkStyle to="/bookmark">
         <Li>북마크 페이지</Li>
-      </Link>
+      </LinkStyle>
     </LiContainer>
   );
 }
