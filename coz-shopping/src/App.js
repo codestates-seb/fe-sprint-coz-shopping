@@ -58,7 +58,7 @@ function App() {
               }></Route>
             <Route path="/products/list" 
               element={<Category 
-              items = {data} 
+              items = {data}    
               addedBookMark={data}
               bookMarkHandler={bookMarkHandler}
               categoryHandler={categoryHandler}
