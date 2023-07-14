@@ -1,5 +1,7 @@
 
 /*
+데이터 구조 
+
 {"id":8,
 "type":"Category",
 "title":"가드닝",
@@ -11,3 +13,4 @@
 "brand_image_url":null,
 "follower":null} 
 */
+
