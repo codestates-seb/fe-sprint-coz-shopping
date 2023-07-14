@@ -47,38 +47,32 @@
 /* productList.js */
 .products-container{
   margin: 104px 76px;
+  width: 1160px;
 }
 
 
  /* mainProducsList.js */
 /* 상품리스트 */
+
 .product-item-container{
-  width: 1128px;
-  /* background-color: antiquewhite;
-  border: 1px solid red; */
+  margin: 0;
+  width: 100%;
 }
 .product-item-container > ul {
   margin:0;
   padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: inline-block;
+  margin-right: 24px;
 }
 
 .product-item-container > ul > li{
-  margin: 0 12px;
   width: 264px;
   height: 264px;
-  /* border: 1px solid; */
   list-style-type:none;
 }
-.product-item-container > ul li:first-child{
-  margin-left: 0;
-}
-.product-item-container > ul li:last-child{
-  margin-right: 0;
-}
+
 .product-item-img > img{
+  position: relative;
   width: 264px;
   height: 210px;
   border-radius: 10px;
@@ -91,42 +85,88 @@
 }
 
 .product-item-price{
+  height: 16px;
   display: flex;
   justify-content: right;
 }
 
+.product-item-content-title{
+  font-weight: bold;
+}
+.product-item-discount{
+  color: #452CDD;
+  font-weight: bold;
+}
+/* mainProducsList.js  > BookMark On Off  */
+
+.bookmark-on-off-container{
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top:-40px;
+  left:230px
+}
+.bookmark-on-off{
+  position: absolute;
+}
+
+
+
  /* mainProducsList.js */
 /* 북마크 리스트 */
 .bookmark-item-container{
-  width: 1128px;
-  background-color: antiquewhite;
-  border: 1px solid red;
+  margin: 0;
+  width: 100%;
+  
 }
 .bookmark-item-container > ul {
   margin:0;
   padding: 0;
-  display: flex;
-  flex-direction: row;
+  display: inline-block;
+  margin-right: 24px;
 }
 .bookmark-item-container > ul > li{
-  margin: 0 12px;
   width: 264px;
   height: 264px;
-  border: 1px solid;
   list-style-type:none;
 }
-.bookmark-item-container > ul li:first-child{
-  margin-left: 0;
+.bookmark-item-container > ul > li{
+
+  width: 264px;
+  height: 264px;
+  list-style-type:none;
 }
-.bookmark-item-container > ul li:last-child{
-  margin-right: 0;
+
+.bookmark-item-img > img{
+  width: 264px;
+  height: 210px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.bookmark-item-content{
+  margin-top:6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bookmark-item-price{
+  height: 16px;
+  display: flex;
+  justify-content: right;
+}
+.bookmark-item-content-title{
+  font-weight: bold;
+}
+.bookmark-item-discount{
+  color: #452CDD;
+  font-weight: bold;
 }
 
 
 /* headerModal.js */
 
 .header-modal-container{
-  z-index: 1;
+  z-index: 99999;
   position: absolute;
   top: 54px;
   right: 58px;
@@ -151,9 +191,98 @@
 .header-modal-container > div:last-child{
   border-bottom:none;
 }
-.header-modal-productlist > img{
+.header-modal-productlist > a{
+  text-decoration: none;
+  color: black;
+}
+.header-modal-bookmark > a{
+  text-decoration: none;
+  color: black; 
+}
+
+.header-modal-productlist > a > img{
   margin-right: 5px;
 }
-.header-modal-bookmark > img{
+.header-modal-bookmark > a > img{
   margin-right:  5px;    
+}
+
+
+
+/* catagory.js */
+.category{
+  margin:0 76px
+}
+.category-container{
+  margin-top:104px;
+  margin-bottom: 12px;
+  width:1160px;
+  height: 100%;
+
+  display:flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.category-container > div {
+  width: 82px;
+  height: 110px;
+  margin-right: 36px;
+  text-align: center;
+}
+.category-container > div > img{
+  width: 82px;
+  height: 82px;
+  border-radius: 50px;
+}
+
+
+/* categoryList.js */
+
+.category-list-container{
+  width: 1160px;
+  height: 100%;
+
+}
+.category-item-container > ul {
+  margin:0;
+  padding: 0;
+  display: inline-block;
+  margin-right: 24px;
+}
+.category-item-container > ul > li{
+  width: 264px;
+  height: 264px;
+  list-style-type:none;
+}
+.category-item-container > ul > li{
+
+  width: 264px;
+  height: 264px;
+  list-style-type:none;
+}
+
+.category-item-img > img{
+  width: 264px;
+  height: 210px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.category-item-content{
+  margin-top:6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.category-item-price{
+  height: 16px;
+  display: flex;
+  justify-content: right;
+}
+.category-item-content-title{
+  font-weight: bold;
+}
+.category-item-discount{
+  color: #452CDD;
+  font-weight: bold;
 }
