@@ -35,7 +35,6 @@ export default function Products({data, bookmarked, setbookmarked}){
     <main>
       <section className='category_container' >
         <div className='category_li_container' onClick={()=>setcategory('All')}>
-          {console.log(category_all.image_url)}
           <img className='category_img' src={category_all === undefined ? {}: (category_all.image_url === null) ? category_all.brand_image_url:category_all.image_url} alt="전체"></img>
           <span>전체</span>
         </div>
