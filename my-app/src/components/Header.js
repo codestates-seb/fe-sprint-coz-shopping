@@ -11,7 +11,6 @@ export default function Header() {
     }
 
     return (
-    <Router>
         <header className="header-container">
             <Link to ='/'>
                 <div className="logo-container">
@@ -29,7 +28,7 @@ export default function Header() {
                         {<ul>
                             <li>ooo님, 안녕하세요!</li>
                             <li>
-                                <Link to='/product'>
+                                <Link to='/products/list'>
                                     <div className="dropdown-list">
                                     <img src='product.png' alt='icon'/>상품리스트 페이지</div>
                                 </Link>
@@ -46,7 +45,6 @@ export default function Header() {
                 </div>
             )}
         </header>
-    </Router>
     );
 }
 

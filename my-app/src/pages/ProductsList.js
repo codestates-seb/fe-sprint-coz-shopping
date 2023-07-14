@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styled from 'styled-components';
 
-export default function bookmarkPage() {
+export default function ProductsPage() {
     return (
     <section >
         <Header></Header>
