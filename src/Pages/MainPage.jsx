@@ -1,12 +1,16 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer from "../Footer";
+import { styled } from "styled-components";
 
-function MainPage(params) {
+const ContentSection = styled.section`
+  width: 1280px;
+  height: 694px;
+`;
+
+function MainPage() {
   return (
-    <>
-      <Header></Header>
+    <ContentSection>
       <Footer></Footer>
-    </>
+    </ContentSection>
   );
 }
 export default MainPage;

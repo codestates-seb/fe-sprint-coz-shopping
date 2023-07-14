@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Header from "./Header";
 
 import BookmarkPage from "./Pages/BookmarkPage";
 import ProductListPage from "./Pages/ProductListPage";
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <Header />
         <MainPage />
         <Routes>
           <Route exact path="/" component={MainPage}></Route>
