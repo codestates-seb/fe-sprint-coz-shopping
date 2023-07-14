@@ -10,6 +10,8 @@
     position: fixed;
     
     width: 100%;
+    min-width: 480px;
+    
     height: 58px;
     padding: 0 76px;
     bottom: 0;
