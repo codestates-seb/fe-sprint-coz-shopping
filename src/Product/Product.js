@@ -1,12 +1,13 @@
 import React from "react";
+import './Product.css'
 
-export default function Product () {
+export default function Product ({product}) {
     return (
-        <div className="product">
-            <img className="product_profile"src={product.image_url} alt="product image"/>
-            <span className="product-name"></span>
-            <span className="product-dcrate"></span>
-            <span className="product-price"></span>
+        <div key={product.id} className="product">
+            <img className="product_profile" src={product.image_url} alt="product image"/>
+            <span className="product-title">{product.title}</span>
+            <span className="product-dcRate">{`${product.discountPercentage}%` && null}</span>
+            <span className="product-price">{product.price}</span>
         </div>
     )
 } 
