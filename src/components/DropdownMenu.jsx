@@ -8,15 +8,18 @@ const DropdownBox = styled.div`
   height: 150px;
   border-radius: 12px;
   background-color: white;
-  top: 54px;
+  top: 41px;
   right: 32px;
   box-shadow: 0 8px 8px 0 #0000001a;
 
   .polygon {
+    filter: drop-shadow(0px 8px 8px 0px #0000001a);
     position: absolute;
     width: 16px;
     height: 18px;
-    top: -20px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: white;
+    top: -18px;
     right: 54px;
     /* FIXME : 그림자추가 해야 함 */
   }
