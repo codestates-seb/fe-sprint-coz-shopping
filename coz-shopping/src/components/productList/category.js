@@ -6,10 +6,6 @@ import { useState } from 'react';
 
 const Category = (props)=>{
 
-
-    console.log(props.selectedCategory)
-
-
     return(
         <div className='category'>
             <div className='category-container'>
@@ -44,7 +40,13 @@ const Category = (props)=>{
                     <span>브랜드</span>
                 </div>
             </div>
-            <CategoryList items={props.items} selectedCategory={props.selectedCategory} bookMarkHanler ={props.bookMarkHanler}></CategoryList>
+            <CategoryList 
+                items={props.items} 
+                selectedCategory={props.selectedCategory} 
+                bookMarkHandler ={props.bookMarkHandler} 
+                target={props.target}
+            >
+            </CategoryList>
         </div>
     )
 }

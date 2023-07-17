@@ -1,28 +1,48 @@
 import React from 'react';
-
+import { useEffect, useRef } from 'react';
 
 
 const CategoryList = (props) =>{
 
 
-    console.log(props.selectedCategory)
-
+    console.log(props.target)
     
+    // useEffect(() => {
+    //     observer.observe(target.current);
+    //   }, []);
+    
+
+    const options = {
+        threshold: 1.0,
+    }
+
+    const addItemList = ()=>{
+        console.log('실행됨')
+    }
 
     const filteredData = props.items.filter((el)=>{
         if(props.selectedCategory === 'All'){
             return props.items
-        }else{
+        }else if( props.selectedCategory === 'Product' ||
+             props.selectedCategory === "Category" || 
+             props.selectedCategory === "Exhibition" || 
+             props.selectedCategory === "Brand"){
             return el.type === props.selectedCategory
+        }else if(props.selectedCategory === "BOOKMARK"){
+            return el.isBookMarked === true
         }
     })
 
+    const observer = new IntersectionObserver(addItemList,options)
+
     console.log(filteredData)
+
 
     // items={props.items} selectedCategory={props.selectedCategory} bookMarkHanler ={props.bookMarkHanler}
     return(
-        <div className='category-list-container'>
-                <div className='category-item-container'>
+        <div className='category-list-container'>  
+        {/* category-list-container에 무한스크롤기능을 넣어야한다. */}
+                <div className='category-item-container'ref={props.target} >
                 {filteredData.map((el,idx)=>{
                     return(
                         <ul key={idx}>
@@ -43,9 +63,15 @@ const CategoryList = (props) =>{
                                 </div>
                                 <div className='category-item-price'><span>{!el.price?  ' ': `${el.price}원`}</span></div>
                             </li>
+
                         </ul>
                     )
                  })}
+                            <div className='scroll-container' ref={props.target} >
+                                <h2></h2>
+                            </div>
+
+
                 </div>
         </div>
     )

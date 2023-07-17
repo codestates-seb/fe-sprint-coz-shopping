@@ -29,7 +29,7 @@ const Header = (props)=>{ //props.onClose
             <div className='header-button-container'>
             <img src={require('../../img/햄버거 버튼.png')} onClick={modalHandler} ></img>
             </div>
-            {modal? <HeaderModal modal={setModal} > </HeaderModal>:null}
+            {modal? <HeaderModal modal={setModal} categoryHandler={props.categoryHandler}> </HeaderModal>:null}
 
         </div>
     )

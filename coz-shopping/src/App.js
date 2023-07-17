@@ -1,6 +1,6 @@
 
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -16,6 +16,7 @@ import BookMarkList from './components/bookMarkPage/bookMarkList';
 function App() {
   const [data, setData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const target = useRef(null);
  
   useEffect(()=>{
     axios.get('http://cozshopping.codestates-seb.link/api/v1/products?count=10')
@@ -28,7 +29,7 @@ function App() {
 
     console.log(data)
 
-  const bookMarkHandler =(id)=>{ //mainProductList에서 bookmark이미지를 클릭하면 콜되는 함수. 
+  const bookMarkHandler = (id)=>{ //mainProductList에서 bookmark이미지를 클릭하면 콜되는 함수. 
     const marked = data.map((el)=>{
       if(el.id === id){
         return el.isBookMarked === true  ? { ...el, isBookMarked: false}:{ ...el, isBookMarked: true}
@@ -39,7 +40,7 @@ function App() {
     setData(marked)
   }
 
-  const categoryHandler =(e)=>{
+  const categoryHandler = (e)=>{
     setSelectedCategory(e.target.id)
     console.log(selectedCategory);
   }
@@ -49,26 +50,32 @@ function App() {
     <BrowserRouter>
       <div  className="App">
         <div>
-          <Header></Header>
+          <Header categoryHandler={categoryHandler}></Header>
           <Routes>
-            <Route path="/" element={<MainProductList 
-              bookMarkHandler={bookMarkHandler} 
-              addedBookMark={data}
-              />
-              }></Route>
+            <Route path="/" 
+              element={<MainProductList 
+                items = {data} 
+                addedBookMark = {data}
+                selectedCategory = "BOOKMARK"
+                bookMarkHandler = {bookMarkHandler}
+                categoryHandler = {categoryHandler}
+              />}></Route>
             <Route path="/products/list" 
-              element={<Category 
-              items = {data}    
-              addedBookMark={data}
-              bookMarkHandler={bookMarkHandler}
-              categoryHandler={categoryHandler}
-              selectedCategory={selectedCategory} />
-              }></Route>
-            <Route path="/bookmark" element={<BookMarkList 
-              items = {data} 
-              addedBookMark={data}
-              selectedCategory={selectedCategory}
-              bookMarkHandler={bookMarkHandler}
+              element = {<Category 
+                items = {data}    
+                addedBookMark = {data}
+                bookMarkHandler = {bookMarkHandler}
+                categoryHandler = {categoryHandler}
+                selectedCategory = {selectedCategory}
+                target = {target}
+              /> }></Route>
+            <Route path="/bookmark" 
+              element = {<BookMarkList
+                items = {data} 
+                addedBookMark = {data}
+                selectedCategory = {selectedCategory}
+                bookMarkHandler = {bookMarkHandler}
+                categoryHandler = {categoryHandler}
               />}></Route>
           </Routes>
         </div>
