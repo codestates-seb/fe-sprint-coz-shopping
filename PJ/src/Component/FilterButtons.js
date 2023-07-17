@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import allImg from "../assets/all.png";
-import productImg from "../assets/product.png";
-import categoryImg from "../assets/category.png";
-import exhibitionImg from "../assets/exhibition.png";
-import brandImg from "../assets/brand.png";
+import allImg from "../img/all.png";
+import productImg from "../img/product.png";
+import categoryImg from "../img/category.png";
+import exhibitionImg from "../img/exhibition.png";
+import brandImg from "../img/brand.png";
 
 export default function FilterButtons({ setCurFilter, setPage }) {
     const [active, setActive] = useState("All");

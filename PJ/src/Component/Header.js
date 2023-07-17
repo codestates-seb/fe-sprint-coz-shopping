@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Menu from './Menu';
-import logo from "../assets/logo.png";
-import hamburger from "../assets/icon.png";
+import logo from "../img/logo.png";
+import hamburger from "../img/icon.png";
 
 export default function Header() {
     const [isMenu, setIsMenu] = useState(false);

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import checkedIcon from "../assets/bookmark-on.png";
-import bookmarkIcon from "../assets/bookmark-off.png";
+import checkedIcon from "../img/bookmark-on.png";
+import bookmarkIcon from "../img/bookmark-off.png";
 
 const Toast = ({ bookmarkAction }) => {
   const [toastQueue, setToastQueue] = useState([]);

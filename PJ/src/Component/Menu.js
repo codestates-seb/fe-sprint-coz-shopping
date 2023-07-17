@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import menu from "../assets/menu.png";
-import productListIcon from "../assets/gift-icon.png";
-import bookmarkIcon from "../assets/boomark-icon.png";
+import menu from "../img/menu.png";
+import productListIcon from "../img/gift-icon.png";
+import bookmarkIcon from "../img/bookmark-icon.png";
 import styled from 'styled-components';
 
 export default function Menu({ menuPopUp }) {

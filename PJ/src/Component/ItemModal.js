@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import BookmarkIcon from './BookmarkIcon';
-import modalCloseBtn from '../assets/modal-close.png'
+import modalCloseBtn from '../img/modal-close.png'
 
 export default function ItemModal({ data, modalPopUp, bookmarkList, setBookmarkList, isBookmarked }) {
     function stopEvent(e) {

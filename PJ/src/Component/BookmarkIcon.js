@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
-import bookmarkOff from "../assets/bookmark-off.png";
-import bookmarkOn from "../assets/bookmark-on.png";
+import bookmarkOff from "../img/bookmark-off.png";
+import bookmarkOn from "../img/bookmark-on.png";
 
 export default function BookmarkIcon({ data, bookmarkList, setBookmarkList, isBookmarked}) {
     function handleBookmark(e, item) {
