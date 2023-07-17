@@ -1,0 +1,114 @@
+#head--container{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+    display: flex;
+    box-shadow: 10px 5px 5px rgb(174, 171, 171);
+    
+}
+.head--manu--container{
+    display: flex;   
+}
+#logo{
+    padding-left: 30px;
+    margin-right: 1em;
+    height: 40px;    
+    cursor: pointer; 
+}
+#title--name{
+    font-size: 30px;
+    vertical-align: top;
+    font-weight: 800;   
+}
+#dropdown--form{
+    display: flex;
+    flex-direction: column;
+}
+#hamberger{
+    padding-right: 30px;
+    align-self: flex-end;
+    height: 25px;    
+    cursor: pointer; 
+}
+#dropdown--container{
+    position: relative;
+    display: inline-block;    
+    margin-top: 0;
+    width: 200px;
+    padding-left: 0;
+    
+}
+#dropdown--box{
+  border: solid black;
+  background-color: white;
+  position: absolute;
+  list-style: none;
+}
+.icon--img{
+  height: 15px;
+}
+
+#itemlist--container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.item--container{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 350px;
+}
+.item--info--container{
+    width: 300px;    
+    display: flex;
+    justify-content: space-between;
+}
+.img--wraper{
+    position: relative;
+}
+.item--image{
+    height: 300px;
+    width: 300px;
+}
+.text-container{
+    position: absolute;  
+    bottom: 10px;
+    right: 60px;
+}
+.main--title{
+    margin:1px;
+    padding:1px;
+    font-size: 15px;
+    font-weight: 800;
+}
+.sub--title{
+    margin:1px;
+    padding:1px;
+    font-size: 15px;
+}
+.sub--info--container{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.sub--info--container p {
+    margin: 1px 1px 1px auto;
+    display: flex;    
+    padding:1px;
+}
+.sub--info1{
+    font-weight: 800;
+}
+.discount{
+    font-size: 15px;
+    color:rgb(153, 76, 153);
+    font-weight: 800;
+}
+.sub--info2{   
+    font-size: 15px;
+}
+
