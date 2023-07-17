@@ -1,0 +1,31 @@
+#filter--list--container{
+    display: flex;
+    justify-content: center;
+}
+#divided--item--list--container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#devide--list--container{
+    display: flex;
+}
+#filter--container{
+    display: flex;
+    flex-direction: row;
+}
+.filter{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    list-style: none;
+}
+.filter--img{
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+.filter--name{
+    margin-top: 5px;
+    text-align: center;
+}

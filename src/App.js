@@ -3,17 +3,26 @@ import './App.css';
 import Main from './pages/main';
 import List from './pages/product/list';
 import Bookmark from './pages/bookmark';
-import Head from './component/head';
+import Head from './components/head';
+import {useState, useEffect} from 'react';
+import Footer from './components/footer';
 
 function App() {
+  const [productData, setProductData] = useState([]);
+   
+  useEffect(()=>fetch('http://cozshopping.codestates-seb.link/api/v1/products')
+  .then((res)=>res.json())
+  .then((data)=>setProductData(data)),[]);    
+
   return (
     <BrowserRouter>
     <Head/>
     <Routes>
-      <Route path='/' element={<Main/>}></Route>      
-      <Route path='/product/list' element={<List/>}></Route>      
+      <Route path='/' element={<Main productData={productData}/>}></Route>      
+      <Route path='/product/list' element={<List productData={productData}/>}></Route>      
       <Route path='/bookmark' element={<Bookmark/>}></Route>
     </Routes>
+    <Footer></Footer>
     </BrowserRouter>
   );
 }

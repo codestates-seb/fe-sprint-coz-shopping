@@ -48,3 +48,58 @@
 .icon--img{
   height: 15px;
 }
+
+#itemlist--container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.item--container{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 350px;
+}
+.item--info--container{
+    width: 300px;    
+    display: flex;
+    justify-content: space-between;
+}
+.item--image{
+    height: 300px;
+    width: 300px;
+}
+.main--title{
+    margin:1px;
+    padding:1px;
+    font-size: 15px;
+    font-weight: 800;
+}
+.sub--title{
+    margin:1px;
+    padding:1px;
+    font-size: 15px;
+}
+.sub--info--container{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.sub--info--container p {
+    margin: 1px 1px 1px auto;
+    display: flex;    
+    padding:1px;
+}
+.sub--info1{
+    font-weight: 800;
+}
+.discount{
+    font-size: 15px;
+    color:rgb(153, 76, 153);
+    font-weight: 800;
+}
+.sub--info2{   
+    font-size: 15px;
+}
+

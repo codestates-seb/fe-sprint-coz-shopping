@@ -1,8 +1,16 @@
 import React from "react";
+import Item from "../components/item";
 
-const Main = () =>{
+const Main = ({productData}) =>{
+    
     return (
-        <div>메인 페이지</div>
+        <div>
+            <section><h3>상품페이지</h3><div id="itemlist--container">
+                {productData.slice(0,4).map((el)=>{return(<Item el={el}></Item>);})}
+                </div></section>
+            <section><h3>북마크페이지</h3></section>
+        </div>
+        
     )
 }
 export default Main;
