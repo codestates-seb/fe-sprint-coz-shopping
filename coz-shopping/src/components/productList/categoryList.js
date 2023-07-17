@@ -67,6 +67,7 @@ const CategoryList = (props) =>{
                         </ul>
                     )
                  })}
+                 
                             <div className='scroll-container' ref={props.target} >
                                 <h2></h2>
                             </div>
