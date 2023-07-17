@@ -7,8 +7,9 @@ import styled from 'styled-components';
 function List({productData}) {
     
     const [dividedProduct, setdividedProduct]=useState([]);
-    const [filteredProduct, setfilteredProduct]=useState(productData);
-    const [isClicked, setIsCliked]=useState(1);   
+    const [filteredProduct, setfilteredProduct]=useState(productData);   
+
+    //devidedProduct 왜만든거지??...
 
     const StyledDiv = styled.div`    
     margin-top: 5px;
@@ -16,42 +17,31 @@ function List({productData}) {
     `;
 
     useEffect(()=>{const temp =[];
-        console.log('www')
          for(let i = 0 ; i<filteredProduct.length; i+=4){
         temp.push(filteredProduct.slice(i,i+4));    
         }
-        console.log(filteredProduct)
         return setdividedProduct(temp);        
     },[filteredProduct])
 
     const handleAllFilter=()=>{
-        setIsCliked(1);
         setfilteredProduct(productData)        
     }
 
     const handleProductsFilter=()=>{  
         const pF= productData.filter((el)=>el.type==='Product');
-        setIsCliked(2);
         setfilteredProduct(pF);           
     }
     const handleCategoryFilter=()=>{
         const pF= productData.filter((el)=>el.type==='Category');
-        setIsCliked(3);
         setfilteredProduct(pF); 
     }
     const handleExhibitionFilter=()=>{
         const pF= productData.filter((el)=>el.type==='Exhibition');
-        setIsCliked(4);
         setfilteredProduct(pF); 
     }
     const handleBrandFilter=()=>{
         const pF= productData.filter((el)=>el.type==='Brand');
-        setIsCliked(5);
         setfilteredProduct(pF); 
-    }
-
-    const handleTest=()=>{
-        console.log(dividedProduct)
     }
 
 

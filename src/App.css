@@ -41,7 +41,8 @@
     
 }
 #dropdown--box{
-  border: solid brown;
+  border: solid black;
+  background-color: white;
   position: absolute;
   list-style: none;
 }
@@ -66,9 +67,17 @@
     display: flex;
     justify-content: space-between;
 }
+.img--wraper{
+    position: relative;
+}
 .item--image{
     height: 300px;
     width: 300px;
+}
+.text-container{
+    position: absolute;  
+    bottom: 10px;
+    right: 60px;
 }
 .main--title{
     margin:1px;

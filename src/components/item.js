@@ -1,10 +1,16 @@
 import React, {useState} from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faStar} from '@fortawesome/free-solid-svg-icons'
 
 function Item({el}) {
     const [isMarked, setIsMarked] = useState(false);
 
     const handleSetIsMarked = () => {
+        if (el.bookmark === undefined) {
+            el.bookmark = true;
+        } else {
+            el.bookmark = !el.bookmark;
+        }
         setIsMarked(!isMarked);
     }
 
@@ -12,20 +18,33 @@ function Item({el}) {
         <div key={el.id} className="item--container">
             <div className="img--container">
                 <div className="img--wraper">
-                    <figure>
-                        <img
-                            className="item--image"
-                            src={el.image_url !== null
-                                ? el.image_url
-                                : el.brand_image_url}
-                            alt={el.title !== null
-                                ? el.title
-                                : el.brand_name}></img>
-                        <figcaption className="text-container">
-                            <FontAwesomeIcon icon="fa-regular fa-star"/><span/>어딨음?</figcaption>
-                    </figure>
+                    <img
+                        className="item--image"
+                        src={el.image_url !== null
+                            ? el.image_url
+                            : el.brand_image_url}
+                        alt={el.title !== null
+                            ? el.title
+                            : el.brand_name}></img>
+                    <div className="text-container">{
+                            el.bookmark
+                                ? <FontAwesomeIcon
+                                        icon={faStar}
+                                        onClick={() => handleSetIsMarked()}
+                                        style={{
+                                            color: "#ffe438",
+                                            cursor: "pointer"
+                                        }}/>
+                                : <FontAwesomeIcon
+                                        icon={faStar}
+                                        onClick={() => handleSetIsMarked()}
+                                        style={{
+                                            color: "#ffffff",
+                                            cursor: "pointer"
+                                        }}/>
+                        }
+                    </div>
                 </div>
-
             </div>
             <div className="item--info--container">
                 <div className="title--container">

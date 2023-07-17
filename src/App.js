@@ -20,9 +20,9 @@ function App() {
     <Routes>
       <Route path='/' element={<Main productData={productData}/>}></Route>      
       <Route path='/product/list' element={<List productData={productData}/>}></Route>      
-      <Route path='/bookmark' element={<Bookmark/>}></Route>
+      <Route path='/bookmark' element={<Bookmark productData={productData}/>}></Route>
     </Routes>
-    <Footer></Footer>
+    <Footer/>
     </BrowserRouter>
   );
 }
