@@ -6,22 +6,14 @@ import styled from 'styled-components';
 
 function List({productData}) {
     
-    const [dividedProduct, setdividedProduct]=useState([]);
     const [filteredProduct, setfilteredProduct]=useState(productData);   
 
-    //devidedProduct 왜만든거지??...
 
     const StyledDiv = styled.div`    
     margin-top: 5px;
     text-align: center;        
     `;
 
-    useEffect(()=>{const temp =[];
-         for(let i = 0 ; i<filteredProduct.length; i+=4){
-        temp.push(filteredProduct.slice(i,i+4));    
-        }
-        return setdividedProduct(temp);        
-    },[filteredProduct])
 
     const handleAllFilter=()=>{
         setfilteredProduct(productData)        
