@@ -1,0 +1,12 @@
+.shopping-item-wrap {
+    display: flex;
+    margin-left: 30%;
+}
+
+.shopping-item-img > img{
+
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    margin: 10px;
+}
