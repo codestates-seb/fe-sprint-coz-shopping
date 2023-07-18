@@ -61,20 +61,20 @@ const StyleDropdown = styled.div`
     height: 264px;
 }`
 
-function Dropdown({ menuToggleHandler }) {
+function Dropdown({ handleDropdown }) {
     return (
         <StyleDropdown>
             <div className="dropdown-menu">
                 <ul className='dropdown-container'>
                     <li className="list-box" ><span className='dropdown-text'>OOO님 안녕하세요!</span ></li>
                     <li className="list-box">
-                        <Link to='/products/list' onClick={menuToggleHandler}>
-                            <img className='icon' src='./item.svg' alt='상품 아이콘'></img>  <span className='dropdown-text'>상품리스트</span>
+                        <Link to='/products/list' onClick={handleDropdown}>
+                            <img className='icon' src='/images/item.svg' alt='상품 아이콘'></img>  <span className='dropdown-text'>상품리스트</span>
                         </Link>
                     </li>
                     <li className="list-box">
-                        <Link to='/bookmark' onClick={menuToggleHandler}>
-                            <img className='icon' src='./bookmark.svg' alt='북마크 아이콘'></img> <span className='dropdown-text'>북마크 페이지</span>
+                        <Link to='/bookmark' onClick={handleDropdown}>
+                            <img className='icon' src='/images/bookmark.svg' alt='북마크 아이콘'></img> <span className='dropdown-text'>북마크 페이지</span>
                         </Link>
                     </li>
                 </ul>

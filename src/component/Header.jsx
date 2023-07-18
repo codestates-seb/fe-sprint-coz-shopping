@@ -8,7 +8,6 @@ const StyleHeader =  styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1280px;
     height: 80px;
     padding: 0px 76px;
     position: sticky;
@@ -56,13 +55,13 @@ function Header() {
       <div className="logo-container">
         <div className="logo-img">
           <Link to ='/'>
-          <img src="logo.png" alt="logo" />
+          <img src="/images/mainLogo.png" alt="mainLogo" />
           </Link>
         </div>
         <span className="logo-title">Coz Shopping</span>
       </div>
       <button onClick={handleDropdown}>
-        <img className="hamburger-logo"src="hamburger.png" alt="hamburger" />
+        <img className="hamburger-logo"src="/images/HeaderButton.svg" alt="HeaderButton" />
       </button>
     </div>
     {/* 레이아웃 방해를 받기 때문에 Dropdown 컴포넌트를 header-continer 요소 외부에 렌더링함  */}
