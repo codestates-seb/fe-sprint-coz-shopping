@@ -5,7 +5,7 @@ import styled from "styled-components";
 const StyleDropdown = styled.div`
 .dropdown-menu {
     position: fixed;
-    right: 28%;
+    right: 2%;
     top: 7%; 
     width: 200px;
     height: 150px;

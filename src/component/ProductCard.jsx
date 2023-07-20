@@ -56,12 +56,12 @@ height:264px;
 
 `
 
-function ProductCard({ product }) {
+function ProductCard({ product, toggleBookmark }) {
     const {
         title,
         brand_image_url,
         brand_name,
-        bookmark_checked,
+        checked,
         discountPercentage,
         follower,
         image_url,
@@ -79,8 +79,9 @@ function ProductCard({ product }) {
                     <div className="product-box">
                         <img className="item-img" src={image_url} alt="Product" />
                         <img
+                            onClick={() => toggleBookmark(product)} 
                             className="star"
-                            src={"/images/checkedStar.svg"}
+                            src={checked ? "/images/checkedStar.svg" : "/images/uncheckedStar.svg"}
                             alt="book mark"
                         />
                     </div>
@@ -101,7 +102,7 @@ function ProductCard({ product }) {
                         <img className="item-img" src={image_url} alt="Product img" />
                         <img
                             className="star"
-                            src={"/images/checkedStar.svg"}
+                            src={checked ? "/images/checkedStar.svg" : "/images/uncheckedStar.svg"}
                             alt="book mark"
                         />
                     </div>
@@ -117,7 +118,7 @@ function ProductCard({ product }) {
                         <img className="item-img" src={image_url} alt="Product img" />
                         <img
                             className="star"
-                            src={"/images/checkedStar.svg"}
+                            src={checked ? "/images/checkedStar.svg" : "/images/uncheckedStar.svg"}
                             alt="book mark"
                         />
                     </div>
@@ -134,7 +135,7 @@ function ProductCard({ product }) {
                         <img className="item-img" src={brand_image_url} alt="brand img" />
                         <img
                             className="star"
-                            src={"/images/checkedStar.svg"}
+                            src={checked ? "/images/checkedStar.svg" : "/images/uncheckedStar.svg"}
                             alt="book mark"
                         />
                     </div>
@@ -142,7 +143,7 @@ function ProductCard({ product }) {
                         <span className="brand_name">{brand_name}</span>
                         <span className="interest_count">관심고객수</span>
                     </div>
-                    <div className="follower">{follower}</div>
+                    <div className="follower">{follower}명</div>
                 </StyleProductCard>
             )
         default:

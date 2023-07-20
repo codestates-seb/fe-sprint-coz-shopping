@@ -28,33 +28,53 @@ h3 {
 `
 
 
-function MainPage({ products }) {
+function MainPage({ products, toggleBookmark }) {
+    // ------------------------- //
+    console.log("Toggle Bookmark Function in ProductCard:", toggleBookmark);
+
     return (
         <StyleMainPage>
-        <section>
-            <article>
-                <h3>상품 리스트</h3>
-                <ul>
-                    {products
-                        .filter((product) => !product.checked)
-                        .slice(0, 4)
-                        .map((product) => (
-                            <ProductCard
-                                key={product.id}
-                                product={product}
-                            />
-                        ))}
-                </ul>
-            </article>
-            <article>
-                <h3>북마크 리스트</h3>
-                <ul>
-                  
-                </ul>
-            </article>
-        </section>
+            <section>
+                <article>
+                    <h3>상품 리스트</h3>
+                    <ul>
+                        {products
+                            .filter((product) => !product.checked)
+                            .slice(0, 4)
+                            .map((product) => (
+                                <ProductCard
+                                    key={product.id}
+                                    product={product}
+                                    toggleBookmark={toggleBookmark}
+                                />
+                            ))}
+                    </ul>
+                </article>
+                <article>
+                    <h3>북마크 리스트</h3>
+                    <ul>
+                        {products.filter((product) => product.checked).slice(0, 4).length ? (
+                            products
+                                .filter((product) => product.checked)
+                                .slice(0, 4)
+                                .map((product) => (
+                                    <ProductCard
+                                        key={product.id}
+                                        product={product}
+                                        toggleBookmark={toggleBookmark}
+                                    />
+                                ))
+                        ) : (
+                            <h5>북마크된 항목이 존재하지 않습니다</h5>
+                        )}
+                    </ul>
+                </article>
+            </section>
+
         </StyleMainPage>
 
     );
 }
+
+
 export default MainPage;
