@@ -29,9 +29,6 @@ h3 {
 
 
 function MainPage({ products, toggleBookmark }) {
-    // ------------------------- //
-    console.log("Toggle Bookmark Function in ProductCard:", toggleBookmark);
-
     return (
         <StyleMainPage>
             <section>
@@ -39,22 +36,24 @@ function MainPage({ products, toggleBookmark }) {
                     <h3>상품 리스트</h3>
                     <ul>
                         {products
-                            .filter((product) => !product.checked)
+                            .filter((product) => !product.checked) 
                             .slice(0, 4)
                             .map((product) => (
                                 <ProductCard
                                     key={product.id}
                                     product={product}
                                     toggleBookmark={toggleBookmark}
-                                />
+                                 />
                             ))}
+                            
                     </ul>
                 </article>
                 <article>
                     <h3>북마크 리스트</h3>
                     <ul>
-                        {products.filter((product) => product.checked).slice(0, 4).length ? (
-                            products
+                        {products
+                                .filter((product) => product.checked).slice(0, 4).length ? (
+                                products
                                 .filter((product) => product.checked)
                                 .slice(0, 4)
                                 .map((product) => (
@@ -65,8 +64,8 @@ function MainPage({ products, toggleBookmark }) {
                                     />
                                 ))
                         ) : (
-                            <h5>북마크된 항목이 존재하지 않습니다</h5>
-                        )}
+                            <h4>북마크된 항목이 존재하지 않습니다</h4>
+                            )}
                     </ul>
                 </article>
             </section>

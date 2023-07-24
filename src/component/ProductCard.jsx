@@ -61,7 +61,7 @@ function ProductCard({ product, toggleBookmark }) {
         title,
         brand_image_url,
         brand_name,
-        checked,
+        checked = false,
         discountPercentage,
         follower,
         image_url,
@@ -69,7 +69,7 @@ function ProductCard({ product, toggleBookmark }) {
         sub_title,
         type,
     } = product;
-
+    console.log(checked);
 
     // 타입에 따라 다른 컴포넌트를 렌더링합니다.
     switch (type) {
@@ -77,12 +77,12 @@ function ProductCard({ product, toggleBookmark }) {
             return (
                 <StyleProductCard>
                     <div className="product-box">
-                        <img className="item-img" src={image_url} alt="Product" />
-                        <img
-                            onClick={() => toggleBookmark(product)} 
+                            <img className="item-img" src={image_url} alt="Product" />                        
+                            <img 
+                            onClick={() => toggleBookmark(product)} // product 객체가 toggleBookmark 함수의 item 매개변수로 전달 
                             className="star"
                             src={checked ? "/images/checkedStar.svg" : "/images/uncheckedStar.svg"}
-                            alt="book mark"
+                            alt="book mark" 
                         />
                     </div>
 
@@ -101,6 +101,7 @@ function ProductCard({ product, toggleBookmark }) {
                     <div className="product-box">
                         <img className="item-img" src={image_url} alt="Product img" />
                         <img
+                            onClick={() => toggleBookmark(product)}
                             className="star"
                             src={checked ? "/images/checkedStar.svg" : "/images/uncheckedStar.svg"}
                             alt="book mark"
@@ -117,6 +118,7 @@ function ProductCard({ product, toggleBookmark }) {
                     <div className="product-box">
                         <img className="item-img" src={image_url} alt="Product img" />
                         <img
+                            onClick={() => toggleBookmark(product)}
                             className="star"
                             src={checked ? "/images/checkedStar.svg" : "/images/uncheckedStar.svg"}
                             alt="book mark"
@@ -134,6 +136,7 @@ function ProductCard({ product, toggleBookmark }) {
                     <div className="product-box">
                         <img className="item-img" src={brand_image_url} alt="brand img" />
                         <img
+                            onClick={() => toggleBookmark(product)}
                             className="star"
                             src={checked ? "/images/checkedStar.svg" : "/images/uncheckedStar.svg"}
                             alt="book mark"
