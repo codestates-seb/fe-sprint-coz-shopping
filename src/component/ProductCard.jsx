@@ -57,6 +57,7 @@ height:264px;
 `
 
 function ProductCard({ product, toggleBookmark }) {
+    console.log(product)
     const {
         title,
         brand_image_url,
@@ -69,8 +70,7 @@ function ProductCard({ product, toggleBookmark }) {
         sub_title,
         type,
     } = product;
-    console.log(checked);
-
+    
     // 타입에 따라 다른 컴포넌트를 렌더링합니다.
     switch (type) {
         case "Product":
@@ -84,6 +84,7 @@ function ProductCard({ product, toggleBookmark }) {
                             src={checked ? "/images/checkedStar.svg" : "/images/uncheckedStar.svg"}
                             alt="book mark" 
                         />
+                        
                     </div>
 
                     <div className="title-box">
