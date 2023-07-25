@@ -24,10 +24,14 @@ const StyleBookMark = styled.div`
     margin: 24px 76px;
     gap: 0.75rem;
     }
+
+    button {
+        cursor:pointer;
+    }
 `
 
 
-function BookMark({ products, toggleBookmark }) {
+function BookMark({ products, toggleBookmark, openModal }) {
 
     const [filterOption, setFilterOption] = useState("전체");
 
@@ -89,6 +93,7 @@ function BookMark({ products, toggleBookmark }) {
                             key={product.id}
                             product={product}
                             toggleBookmark={toggleBookmark}
+                            openModal={openModal}
                         />
                     ))
             ) : (

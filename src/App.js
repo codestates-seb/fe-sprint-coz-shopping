@@ -6,11 +6,14 @@ import BookMark from "./page/BookMark";
 import ProductListPage from "./page/ProductListPage";
 import Header from "./component/Header";
 import axios from 'axios';
+import Modal from "./component/Modal";
 
 
 function App() {
   const [products, setProducts] = useState([]);
-
+  const [modal, setModal] = useState(false);
+  const [modalImage, setModalImage] = useState(''); // modalImage 상태 선언
+  
   useEffect(() => {
   const fetchProducts = async () => {
   try {
@@ -20,8 +23,7 @@ function App() {
   const data = response.data;
     // 'products' 상태를 검색한 데이터로 업데이트
   setProducts(data);
-  console.log(data);
-
+  console.log(data)
   } catch (error) {
   // API 요청 중에 발생한 오류처리
   console.error('API 요청 중 오류가 발생했습니다:', error);
@@ -41,11 +43,19 @@ const toggleBookmark = (item) => {
         return { ...product, checked: !product.checked };
       } else {
         return product;
-      }
+      } 
     })
   );
 };
 
+const openModal = (img) => {
+  setModal(true);
+  setModalImage(img);
+};
+
+const closeModal = () => {
+  setModal(false);
+};
 
   return (
     <BrowserRouter>
@@ -56,19 +66,29 @@ const toggleBookmark = (item) => {
               element={<MainPage
               products={products}
               toggleBookmark={toggleBookmark}
+              openModal={openModal}
             />} />
           <Route path="/bookmark"
               element={<BookMark
               products={products}
               toggleBookmark={toggleBookmark}
+              openModal={openModal}
             />} />
           <Route path="/products/list"
               element={<ProductListPage
               products={products}
               toggleBookmark={toggleBookmark}
+              openModal={openModal}
             />} />
         </Routes>
         <Footer />
+        {modal && (
+          <Modal
+            isOpen={modal}
+            image={modalImage}
+            closeModal={closeModal}
+          />
+        )}
       </div>
     </BrowserRouter>
 

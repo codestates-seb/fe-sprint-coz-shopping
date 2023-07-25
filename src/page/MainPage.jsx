@@ -28,7 +28,8 @@ h3 {
 `
 
 
-function MainPage({ products, toggleBookmark }) {
+function MainPage({ products, toggleBookmark, openModal}) {
+
     return (
         <StyleMainPage>
             <section>
@@ -43,10 +44,10 @@ function MainPage({ products, toggleBookmark }) {
                                     key={product.id}
                                     product={product}
                                     toggleBookmark={toggleBookmark}
-                                 />
-                            ))}
-                            
-                    </ul>
+                                    openModal={openModal}
+                                />                        
+                            ))}                       
+                    </ul>   
                 </article>
                 <article>
                     <h3>북마크 리스트</h3>
@@ -61,6 +62,7 @@ function MainPage({ products, toggleBookmark }) {
                                         key={product.id}
                                         product={product}
                                         toggleBookmark={toggleBookmark}
+                                        openModal={openModal}
                                     />
                                 ))
                         ) : (

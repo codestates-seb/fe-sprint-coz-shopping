@@ -22,10 +22,13 @@ const StyleProductList = styled.div`
     margin: 24px 76px;
     gap: 0.75rem;
     }
+
+    button {
+        cursor:pointer;
+    }
 `
 
-function ProductListPage({ products, toggleBookmark }) {
-
+function ProductListPage({ products, toggleBookmark, openModal }) {
     const [filterOption, setFilterOption] = useState("전체");
 
     const filterProduct = products.filter((product) => {
@@ -35,7 +38,6 @@ function ProductListPage({ products, toggleBookmark }) {
             return product.type === filterOption; // 해당 카테고리 타입의 상품들만 보여줍니다.
         }
     });
-
 
 
     return (
@@ -84,6 +86,8 @@ function ProductListPage({ products, toggleBookmark }) {
                             key={product.id}
                             product={product}
                             toggleBookmark={toggleBookmark}
+                            openModal={openModal}
+
                         />
                     ))}
             </main>

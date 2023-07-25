@@ -56,8 +56,13 @@ height:264px;
 
 `
 
-function ProductCard({ product, toggleBookmark }) {
-    console.log(product)
+function ProductCard({ product, toggleBookmark, openModal }) {
+
+      // 상품 클릭 시 모달 열기
+//   const handleProductClick = () => {
+//     openModal(product.image_url);
+//   };
+
     const {
         title,
         brand_image_url,
@@ -71,20 +76,22 @@ function ProductCard({ product, toggleBookmark }) {
         type,
     } = product;
     
+
     // 타입에 따라 다른 컴포넌트를 렌더링합니다.
     switch (type) {
         case "Product":
             return (
                 <StyleProductCard>
                     <div className="product-box">
-                            <img className="item-img" src={image_url} alt="Product" />                        
+                            <img className="item-img" src={image_url} alt="Product" 
+                              onClick={()=> openModal(image_url)} />                        
                             <img 
                             onClick={() => toggleBookmark(product)} // product 객체가 toggleBookmark 함수의 item 매개변수로 전달 
                             className="star"
                             src={checked ? "/images/checkedStar.svg" : "/images/uncheckedStar.svg"}
                             alt="book mark" 
                         />
-                        
+
                     </div>
 
                     <div className="title-box">
@@ -100,7 +107,7 @@ function ProductCard({ product, toggleBookmark }) {
             return (
                 <StyleProductCard>
                     <div className="product-box">
-                        <img className="item-img" src={image_url} alt="Product img" />
+                        <img className="item-img" src={image_url} alt="Product img"  onClick={()=> openModal(image_url)}/>
                         <img
                             onClick={() => toggleBookmark(product)}
                             className="star"
@@ -117,7 +124,7 @@ function ProductCard({ product, toggleBookmark }) {
             return (
                 <StyleProductCard>
                     <div className="product-box">
-                        <img className="item-img" src={image_url} alt="Product img" />
+                        <img className="item-img" src={image_url} alt="Product img"  onClick={()=> openModal(image_url)}/>
                         <img
                             onClick={() => toggleBookmark(product)}
                             className="star"
@@ -135,7 +142,7 @@ function ProductCard({ product, toggleBookmark }) {
             return (
                 <StyleProductCard>
                     <div className="product-box">
-                        <img className="item-img" src={brand_image_url} alt="brand img" />
+                        <img className="item-img" src={brand_image_url} alt="brand img"  onClick={()=> openModal(brand_image_url)}/>
                         <img
                             onClick={() => toggleBookmark(product)}
                             className="star"
