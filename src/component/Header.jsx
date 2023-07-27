@@ -10,7 +10,10 @@ const StyleHeader =  styled.header`
     align-items: center;
     height: 80px;
     padding: 0px 76px;
-    position: sticky;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background: #FFF;
     box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.10);
 }

@@ -13,7 +13,10 @@ const StyleFooter = styled.footer`
     align-items: center;
     color: #888;
     margin-bottom: 6px;
-
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 `
 

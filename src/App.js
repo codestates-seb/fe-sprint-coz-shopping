@@ -7,13 +7,17 @@ import ProductListPage from "./page/ProductListPage";
 import Header from "./component/Header";
 import axios from 'axios';
 import Modal from "./component/Modal";
+import Toast from "./component/Toast";
 
 
 function App() {
   const [products, setProducts] = useState([]);
   const [modal, setModal] = useState(false);
   const [modalImage, setModalImage] = useState(''); // modalImage 상태 선언
-  
+  const [showToast, setShowToast] = useState(false); // 알림 표시 여부를 관리하는 상태
+  const [message, setMessage] = useState(''); 
+
+
   useEffect(() => {
   const fetchProducts = async () => {
   try {
@@ -40,7 +44,15 @@ const toggleBookmark = (item) => {
   setProducts((prevProduct) =>
     prevProduct.map((product) => {
       if (product.id === item.id) {
-        return { ...product, checked: !product.checked };
+        const  updataProduct = { ...product, checked: !product.checked };
+        setMessage(updataProduct.checked
+        ? "상품이 북마크에 추가되었습니다."
+        : "상품이 북마크에서 제거되었습니다.");
+        setShowToast(true);
+        setTimeout(()=>{
+          setShowToast(false);
+        },3000);
+        return updataProduct;
       } else {
         return product;
       } 
@@ -89,7 +101,12 @@ const closeModal = () => {
             closeModal={closeModal}
           />
         )}
-      </div>
+         {showToast && (<Toast 
+         message={message} 
+         checked={products.some((product) => product.checked)}
+         />
+         )}
+        </div>
     </BrowserRouter>
 
   )
